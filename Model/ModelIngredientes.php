@@ -4,7 +4,8 @@ class  Ingredientes {
 
     private $codigo;
     private $nombre;
-    private $precio;
+    private $url;
+    private $descripcion;
     private $db; 
     
     function __construct() {
@@ -21,41 +22,41 @@ class  Ingredientes {
     
     public function Guardar() {
         
-        $sql =" INSERT INTO almacen VALUES ( :codigo , :nombre , :precio )";
+        $sql =" INSERT INTO ingredientes VALUES ( :id , :nombre , :url , :descripcion)";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':codigo'=>$this->__Get('codigo'),':nombre'=>$this->__Get('nombre'),':precio'=>$this->__Get('precio')) );
+        $sth->execute(array(':id'=>$this->__Get('id'),':nombre'=>$this->__Get('nombre'),':url'=>$this->__Get('url'),':descripcion'=>$this->__Get('descripcion') ) );
         return $sth;
     }
     
     
     public function Modificar() {
         
-        $sql =" UPDATE almacen SET nombre = :nombre , precio = :precio  WHERE codigo = :codigo";
+        $sql =" UPDATE ingredientes SET nombre = :nombre , url = :descripcion  WHERE id = :id";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':codigo'=>$this->__Get('codigo'),':nombre'=>$this->__Get('nombre'),':precio'=>$this->__Get('precio')  ) );
+        $sth->execute(array(':id'=>$this->__Get('id'),':nombre'=>$this->__Get('nombre'),':url'=>$this->__Get('url'),':descripcion'=>$this->__Get('descripcion')  ) );
         return $sth;
     }
     
     public function Listar() {
         
-        $sql =" SELECT * FROM almacen";
+        $sql =" SELECT * FROM ingredientes";
         $sth = $this->db->prepare($sql);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function Eliminar() {
-        $sql =" DELETE FROM almacen WHERE codigo = :codigo";
+        $sql =" DELETE FROM ingredientes WHERE id = :id";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':codigo'=>$this->__Get('codigo') ) );
+        $sth->execute(array(':id'=>$this->__Get('id') ) );
         return $sth;
     }
     
     function Buscar(){
     
-    $sql = 'SELECT codigo, nombre, precio FROM almacen WHERE codigo = :codigo';
+    $sql = 'SELECT id, nombre, url,descripcion FROM ingredientes WHERE id = :id';
     $sth = $this->db->prepare($sql);
-    $sth->execute(array(':codigo' =>  $this->__GET("codigo")));
+    $sth->execute(array(':id' =>  $this->__GET("id")));
     return $sth->fetchAll();
 }
     
