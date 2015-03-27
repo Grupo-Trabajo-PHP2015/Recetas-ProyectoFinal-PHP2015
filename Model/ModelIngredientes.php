@@ -2,7 +2,7 @@
 
 class  Ingredientes {
 
-    private $codigo;
+    private $id;
     private $nombre;
     private $url;
     private $descripcion;
