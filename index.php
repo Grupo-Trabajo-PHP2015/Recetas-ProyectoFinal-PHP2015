@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-             header("location: Controller/loginController.php");
+             header("location: Controller/ingredientesController.php");
         ?>
     </body>
 </html>
