@@ -69,10 +69,13 @@
                                     </select>
                                 </div>
                             </div>
-
                             <!-- Button -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="singlebutton"></label>
+                            <div class="btn-group ">
+                               
+                                <div class="col-md-4">
+                                    <button id="editar" name="editar" class="btn btn-success">Editar</button>
+                                </div>
+                                
                                 <div class="col-md-4">
                                     <button id="singlebutton" type="submit" name="guardar" class="btn btn-primary">Guardar</button>
                                 </div>
@@ -83,6 +86,7 @@
 
                 </div>	
             </div>
+            <hr>
             <div class="row">
                 <div class="table-responsive">
                     <div class="col-md-6">
@@ -107,67 +111,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal -->
-            <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Login</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal">
-                                <fieldset>
-
-                                    <!-- Form Name -->
-                                    <legend style="text-align: center;">Nuevos ingredientes</legend>
-
-                                    <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
-                                        <div class="col-md-6">
-                                            <input id="textinput" name="textinput" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> ">
-
-                                        </div>
-                                    </div>
-
-                                    <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="textinput">Descripción</label>  
-                                        <div class="col-md-6">
-                                            <input id="textinput" name="textinput" type="text" placeholder="Descripción" class="form-control input-md" value=" <?php echo $descripcion; ?> ">
-
-                                        </div>
-                                    </div>
-
-                                    <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="url">URL:</label>  
-                                        <div class="col-md-6">
-                                            <input id="url" name="url" type="text" placeholder="https://" class="form-control input-md" value=" <?php echo $url; ?> ">
-
-                                        </div>
-                                    </div>
-
-                                    <!-- Button -->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="singlebutton"></label>
-                                        <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Editar</button>
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                            </form>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>   
         </div>
 
         <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>

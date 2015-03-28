@@ -1,14 +1,12 @@
 <?php
 
 class  Ingredientes {
-
-    //idIngrediente, Nombre, Desripcion, Url, Tipo_ingredientes_idTipo_ingrediente, idIngrediente, id
-    
+   
     private $idIngrediente;
     private $Nombre;
     private $Desripcion;
     private $Url;
-    private $Tipo_ingredientes_idTipo_ingrediente;
+    private $Tipo;
     private $db; 
     
     function __construct() {
@@ -25,18 +23,15 @@ class  Ingredientes {
     
     public function Guardar() {
         
-        $sql =" INSERT INTO ingredientes VALUES ( :idIngrediente , :Nombre , :Descripcion , :Url ,:Tipo_ingredientes_idTipo_ingrediente  )";
+        $sql =" INSERT INTO ingredientes VALUES (:Nombre , :Descripcion , :Url ,:Tipo  )";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente'),
-            ':Nombre'=>$this->__Get('Nombre'),
+        $sth->execute(array(':Nombre'=>$this->__Get('Nombre'),
             ':Desripcion'=>$this->__Get('Desripcion'),
             ':Url'=>$this->__Get('Url'),
-            ':Tipo_ingredientes_idTipo_ingrediente'=>$this->__Get('Tipo_ingredientes_idTipo_ingrediente') )  );
+            ':Tipo'=>$this->__Get('Tipo') )  );
         return $sth;
     }
     
-    //INSERT INTO `db_restaurante`.`ingredientes` (`Nombre`, `Desripcion`, `Url`, `Tipo_ingredientes_idTipo_ingrediente`) VALUES ('Mayonesa', 'es una salsa', 'wwww', '1');
-
     public function Modificar() {
         
         $sql =" UPDATE ingredientes SET Nombre = :Nombre , Desripcion = :Desripcion  WHERE idIngrediente = :idIngrediente";
