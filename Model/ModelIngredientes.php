@@ -2,10 +2,11 @@
 
 class  Ingredientes {
 
-    private $id;
-    private $nombre;
-    private $url;
-    private $descripcion;
+    private $idIngrediente;
+    private $Nombre;
+    private $Desripcion;
+    private $Url;
+    private $Tipo_ingredientes_idTipo_ingrediente;
     private $db; 
     
     function __construct() {
@@ -22,18 +23,24 @@ class  Ingredientes {
     
     public function Guardar() {
         
-        $sql =" INSERT INTO ingredientes VALUES ( :id , :nombre , :url , :descripcion)";
+        $sql =" INSERT INTO ingredientes VALUES ( :idIngrediente , :Nombre , :Descripcion , :Url ,:Tipo_ingredientes_idTipo_ingrediente  )";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':id'=>$this->__Get('id'),':nombre'=>$this->__Get('nombre'),':url'=>$this->__Get('url'),':descripcion'=>$this->__Get('descripcion') ) );
+        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente'),
+            ':Nombre'=>$this->__Get('Nombre'),
+            ':Desripcion'=>$this->__Get('Desripcion'),
+            ':Url'=>$this->__Get('Url'),
+            ':Tipo_ingredientes_idTipo_ingrediente'=>$this->__Get('Tipo_ingredientes_idTipo_ingrediente') ) 
+            
+                );
         return $sth;
     }
     
     
     public function Modificar() {
         
-        $sql =" UPDATE ingredientes SET nombre = :nombre , url = :descripcion  WHERE id = :id";
+        $sql =" UPDATE ingredientes SET Nombre = :Nombre , Desripcion = :Desripcion  WHERE idIngrediente = :idIngrediente";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':id'=>$this->__Get('id'),':nombre'=>$this->__Get('nombre'),':url'=>$this->__Get('url'),':descripcion'=>$this->__Get('descripcion')  ) );
+        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente'),':Nombre'=>$this->__Get('Nombre'),':Desripcion'=>$this->__Get('Desripcion')  ) );
         return $sth;
     }
     
@@ -46,17 +53,17 @@ class  Ingredientes {
     }
     
     public function Eliminar() {
-        $sql =" DELETE FROM ingredientes WHERE id = :id";
+        $sql =" DELETE FROM ingredientes WHERE idIngrediente = :idIngrediente";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':id'=>$this->__Get('id') ) );
+        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente') ) );
         return $sth;
     }
     
     function Buscar(){
     
-    $sql = 'SELECT id, nombre, url,descripcion FROM ingredientes WHERE id = :id';
+    $sql = 'SELECT idIngrediente , Nombre, Desripcion, Url , Tipo_ingredientes_idTipo_ingrediente FROM ingredientes WHERE idIngrediente = :idIngrediente';
     $sth = $this->db->prepare($sql);
-    $sth->execute(array(':id' =>  $this->__GET("id")));
+    $sth->execute(array(':idIngrediente' =>  $this->__GET("idIngrediente")));
     return $sth->fetchAll();
 }
     

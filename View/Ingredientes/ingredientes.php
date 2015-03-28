@@ -28,7 +28,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
   <div class="col-md-6">
-      <input id="textinput" name="textinput" type="text" placeholder="Nombre ingrediente" class="form-control input-md" autofocus="" >
+      <input id="textinput" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" autofocus="" >
     
   </div>
 </div>
@@ -37,7 +37,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Descripción:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea"  placeholder="Caracteristicas del ingrediente o producto" rows="4" cols="150" ></textarea>
+    <textarea class="form-control" id="textarea" name="descripcion"  placeholder="Caracteristicas del ingrediente o producto" rows="4" cols="150" ></textarea>
   </div>
 </div>
 
@@ -46,6 +46,18 @@
   <label class="col-md-4 control-label" for="filebutton">Insertar imagen:</label>
   <div class="col-md-4">
     <input  class="input-file" type="file" name="archivo" >
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="clasificacion">Clasificación</label>
+  <div class="col-md-5">
+    <select id="clasificacion" name="clasificacion" class="form-control">
+      <option value="1">Salsas</option>
+      <option value="2">Carnes</option>
+      <option value="3">Verduras</option>
+      <option value="4">Granos</option>
+    </select>
   </div>
 </div>
 
@@ -62,6 +74,32 @@
 
 		</div>	
 	</div>
+    <div class="row">
+<div class="table-responsive">
+	<div class="col-md-6">
+            <table border="1" class="table table-bordred table-striped" style="text-align: center" >
+			<thead>
+				<tr>
+					<th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>URL</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+			
+			<?php 
+
+				echo $tabla;
+
+			 ?>
+
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
 </div>
 
     <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>

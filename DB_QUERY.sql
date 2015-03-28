@@ -93,7 +93,7 @@ CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Ingredientes` (
   PRIMARY KEY (`idIngrediente`) ,
   INDEX `fk_Ingredientes_Tipo_ingredientes1_idx` (`Tipo_ingredientes_idTipo_ingrediente` ASC) ,
   CONSTRAINT `fk_Ingredientes_Tipo_ingredientes1`
-    FOREIGN KEY (`Tipo_ingredientes_idTipo_ingrediente` )
+    FOREIGN KEY (`Tipo_` )
     REFERENCES `DB_Restaurante`.`Tipo_ingredientes` (`idTipo_ingrediente` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
