@@ -85,11 +85,11 @@ ENGINE = InnoDB;
 -- Table `DB_Restaurante`.`Ingredientes`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Ingredientes` (
-  `idIngrediente` INT NOT NULL ,
+  `idIngrediente` INT NOT NULL AUTO_INCREMENT ,
   `Nombre` VARCHAR(45) NULL ,
   `Desripcion` VARCHAR(45) NULL ,
   `Url` VARCHAR(45) NULL ,
-  `Tipo_ingredientes_idTipo_ingrediente` INT NOT NULL AUTO_INCREMENT ,
+  `Tipo_ingredientes_idTipo_ingrediente` INT NOT NULL ,
   PRIMARY KEY (`idIngrediente`) ,
   INDEX `fk_Ingredientes_Tipo_ingredientes1_idx` (`Tipo_ingredientes_idTipo_ingrediente` ASC) ,
   CONSTRAINT `fk_Ingredientes_Tipo_ingredientes1`
