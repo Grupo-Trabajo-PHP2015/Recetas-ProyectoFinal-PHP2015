@@ -9,7 +9,7 @@ USE `DB_Restaurante` ;
 -- Table `DB_Restaurante`.`Roles`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Roles` (
-  `idRol` INT NOT NULL ,
+  `idRol` INT NOT NULL AUTO_INCREMENT ,
   `Rol` VARCHAR(45) NULL ,
   PRIMARY KEY (`idRol`) )
 ENGINE = InnoDB;
@@ -24,7 +24,7 @@ CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Usuarios` (
   `Email` VARCHAR(45) NOT NULL ,
   `Usuario` VARCHAR(45) NOT NULL ,
   `Password` VARCHAR(45) NOT NULL ,
-  `Roles_idRol` INT NOT NULL ,
+  `Roles_idRol` INT NOT NULL AUTO_INCREMENT ,
   PRIMARY KEY (`Cedula`) ,
   INDEX `fk_Usuarios_Roles_idx` (`Roles_idRol` ASC) ,
   CONSTRAINT `fk_Usuarios_Roles`
@@ -39,7 +39,7 @@ ENGINE = InnoDB;
 -- Table `DB_Restaurante`.`Clasificaciones`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Clasificaciones` (
-  `idClasificacion` INT NOT NULL ,
+  `idClasificacion` INT NOT NULL AUTO_INCREMENT ,
   `Clasificacion` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`idClasificacion`) )
 ENGINE = InnoDB;
@@ -49,7 +49,7 @@ ENGINE = InnoDB;
 -- Table `DB_Restaurante`.`Recetas`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Recetas` (
-  `idReceta` INT NOT NULL ,
+  `idReceta` INT NOT NULL AUTO_INCREMENT ,
   `Usuarios_Cedula` INT NOT NULL ,
   `Titulo` VARCHAR(45) NULL ,
   `Porciones` INT NULL ,
@@ -75,7 +75,7 @@ ENGINE = InnoDB;
 -- Table `DB_Restaurante`.`Tipo_ingredientes`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Tipo_ingredientes` (
-  `idTipo_ingrediente` INT NOT NULL ,
+  `idTipo_ingrediente` INT NOT NULL AUTO_INCREMENT ,
   `Tipo` VARCHAR(45) NULL ,
   PRIMARY KEY (`idTipo_ingrediente`) )
 ENGINE = InnoDB;
@@ -89,7 +89,7 @@ CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Ingredientes` (
   `Nombre` VARCHAR(45) NULL ,
   `Desripcion` VARCHAR(45) NULL ,
   `Url` VARCHAR(45) NULL ,
-  `Tipo_ingredientes_idTipo_ingrediente` INT NOT NULL ,
+  `Tipo_ingredientes_idTipo_ingrediente` INT NOT NULL AUTO_INCREMENT ,
   PRIMARY KEY (`idIngrediente`) ,
   INDEX `fk_Ingredientes_Tipo_ingredientes1_idx` (`Tipo_ingredientes_idTipo_ingrediente` ASC) ,
   CONSTRAINT `fk_Ingredientes_Tipo_ingredientes1`
@@ -101,23 +101,23 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DB_Restaurante`.`Ingredientes_has_Recetas`
+-- Table `DB_Restaurante`.`Recetas_has_Ingredientes`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Ingredientes_has_Recetas` (
-  `Ingredientes_idIngrediente` INT NOT NULL ,
+CREATE  TABLE IF NOT EXISTS `DB_Restaurante`.`Recetas_has_Ingredientes` (
   `Recetas_idReceta` INT NOT NULL ,
+  `Ingredientes_idIngrediente` INT NOT NULL ,
   `Cantidad` INT NULL ,
-  PRIMARY KEY (`Ingredientes_idIngrediente`, `Recetas_idReceta`) ,
-  INDEX `fk_Ingredientes_has_Recetas_Recetas1_idx` (`Recetas_idReceta` ASC) ,
-  INDEX `fk_Ingredientes_has_Recetas_Ingredientes1_idx` (`Ingredientes_idIngrediente` ASC) ,
-  CONSTRAINT `fk_Ingredientes_has_Recetas_Ingredientes1`
-    FOREIGN KEY (`Ingredientes_idIngrediente` )
-    REFERENCES `DB_Restaurante`.`Ingredientes` (`idIngrediente` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Ingredientes_has_Recetas_Recetas1`
+  PRIMARY KEY (`Recetas_idReceta`, `Ingredientes_idIngrediente`) ,
+  INDEX `fk_Recetas_has_Ingredientes_Ingredientes1_idx` (`Ingredientes_idIngrediente` ASC) ,
+  INDEX `fk_Recetas_has_Ingredientes_Recetas1_idx` (`Recetas_idReceta` ASC) ,
+  CONSTRAINT `fk_Recetas_has_Ingredientes_Recetas1`
     FOREIGN KEY (`Recetas_idReceta` )
     REFERENCES `DB_Restaurante`.`Recetas` (`idReceta` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Recetas_has_Ingredientes_Ingredientes1`
+    FOREIGN KEY (`Ingredientes_idIngrediente` )
+    REFERENCES `DB_Restaurante`.`Ingredientes` (`idIngrediente` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -128,4 +128,3 @@ USE `DB_Restaurante` ;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
