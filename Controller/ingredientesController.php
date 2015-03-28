@@ -4,6 +4,11 @@ require_once '../Config/Config.php';
 require_once '../Library/DataBase.php';
 require_once '../Model/ModelIngredientes.php';
 
+$id_n="";
+$nombre="";
+$url="";
+$descripcion="";
+
 
 
 if (isset($_POST['guardar'])) {
@@ -15,8 +20,6 @@ if (isset($_POST['guardar'])) {
 
     if ($_FILES["archivo"]["type"] == "image/png" || $_FILES["archivo"]["type"] == "image/jpeg" || $_FILES["archivo"]["type"] == "image/jpg") {
 
-  
-            move_uploaded_file($archivo, $destino);
             $id="";
             $model_ing = new Ingredientes();
             
@@ -26,8 +29,11 @@ if (isset($_POST['guardar'])) {
             $model_ing->__SET('Url',$destino);
             $model_ing->__SET('Tipo_ingredientes_idTipo_ingrediente',$_POST['clasificacion']);
             if ( $model_ing->Guardar() ) {
-//                $mensaje = 
+//          
+//           move_uploaded_file($archivo, $destino);     
+//                            $mensaje = 
             echo "Se guardo Satisfactoriamente";
+            
 //                print "<script>alert('$mensaje')</script>";
             }  else {
                 
@@ -53,12 +59,24 @@ foreach ($model->Listar() as $value) {
     $tabla .="<td>" . $value['Nombre'] . "</td>";
     $tabla .="<td>" . $value['Desripcion']. "</td>";
     $tabla .="<td>" . $value['Url'] . "</td>";
-    $tabla .="<td> <button type='button' class='btn btn-primary btn-xs' > <span class='glyphicon glyphicon-pencil'></span> </button> </td>";
-    $tabla .="<td> <button type='button' class='btn btn-danger btn-xs' >  <span class='glyphicon glyphicon-trash'></span> </button> </td>";
+    $tabla .="<td> <a href='ingredientesController.php?id=".$value['idIngrediente']."'  class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
+    $tabla .="<td> <a href='ingredientesController.php?id=".$value['idIngrediente']."' class='btn btn-danger btn-xs' role='button' data-toggle='modal' data-target='#editar' >  <span class='glyphicon glyphicon-trash'></span> </a> </td>";
     $tabla .="</tr>";
 }
 
+if (isset($_GET["id"])) {
 
+    $ids = $_GET["id"];
+
+    $model = new Ingredientes();
+    $model->__SET("idIngrediente", $ids);
+    foreach ($model->Buscar() as $value) {
+        $id_n = $value["idIngrediente"];
+        $nombre = $value["Nombre"];
+        $descripcion = $value["Desripcion"];
+        $url = $value['Url'];
+    }
+}
 
 include_once "../View/Ingredientes/ingredientes.php";
 ?>
