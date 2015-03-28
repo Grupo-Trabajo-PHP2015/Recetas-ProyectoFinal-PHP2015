@@ -63,7 +63,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="editar"></label>
                                 <div class="col-md-4">
-                                    <button id="editar" name="editar" class="btn btn-success">Editar</button>
+                                    <button id="editar" type="submit" name="editar" class="btn btn-success">Editar</button>
                                 </div>
                             </div>
 
@@ -91,6 +91,7 @@
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
+                                    <th>Imagen</th>
                                     <th>Descripción</th>
                                     <th>URL</th>
                                     <th>Editar</th>
@@ -163,7 +164,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="guardar"></label>
                                                 <div class="col-md-4">
-                                                    <button id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
+                                                    <button id="guardar" type="submit" name="guardar" class="btn btn-primary">Guardar</button>
                                                 </div>
                                             </div>
 

@@ -6,7 +6,7 @@ class  Ingredientes {
     private $Nombre;
     private $Desripcion;
     private $Url;
-    private $Tipo;
+    private $Tipo_ingredientes_idTipo_ingrediente;
     private $db; 
     
     function __construct() {
@@ -23,12 +23,9 @@ class  Ingredientes {
     
     public function Guardar() {
         
-        $sql =" INSERT INTO ingredientes VALUES (:Nombre , :Descripcion , :Url ,:Tipo  )";
+        $sql =" INSERT INTO ingredientes VALUES ( :idIngrediente , :Nombre , :Desripcion , :Url , :Tipo_ingredientes_idTipo_ingrediente )";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':Nombre'=>$this->__Get('Nombre'),
-            ':Desripcion'=>$this->__Get('Desripcion'),
-            ':Url'=>$this->__Get('Url'),
-            ':Tipo'=>$this->__Get('Tipo') )  );
+        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente'),':Nombre'=>$this->__Get('Nombre'),':Desripcion'=>$this->__Get('Desripcion') ,':Url'=>$this->__Get('Url'),':Tipo_ingredientes_idTipo_ingrediente'=>$this->__Get('Tipo_ingredientes_idTipo_ingrediente') ) );
         return $sth;
     }
     

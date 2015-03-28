@@ -48,14 +48,14 @@ if (isset($_POST['guardar'])) {
 
     if ($_FILES["archivo"]["type"] == "image/png" || $_FILES["archivo"]["type"] == "image/jpeg" || $_FILES["archivo"]["type"] == "image/jpg") {
 
-        $id = rand(1, 200);
+        $id = "";
         $model_g = new Ingredientes();
 
         $model_g->__SET('idIngrediente', $id);
         $model_g->__SET('Nombre', $_POST['nombre']);
         $model_g->__SET('Desripcion', $_POST['descripcion']);
         $model_g->__SET('Url', $destino);
-        $model_g->__SET('Tipo', $_POST['clasificacion']);
+        $model_g->__SET('Tipo_ingredientes_idTipo_ingrediente', $_POST['clasificacion']);
         if ($model_g->Guardar()) {
 
             move_uploaded_file($archivo, $destino);
@@ -99,11 +99,11 @@ foreach ($model->Listar() as $value) {
     $tabla .="<tr>";
 
     $tabla .="<td>" . $value['Nombre'] . "</td>";
+    $tabla .="<td> <img src='".$value['Url']."'   width='150' heigth='150' class='img-thumbnail' class='img-responsive' > </td>";
     $tabla .="<td>" . $value['Desripcion'] . "</td>";
     $tabla .="<td>" . $value['Url'] . "</td>";
     $tabla .="<td> <a href='ingredientesController.php?id=" . $value['idIngrediente'] . "'  class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
     $tabla .="<td> <a href='ingredientesController.php?delete=" . $value['idIngrediente'] . "' class='btn btn-danger btn-xs' role='button'>  <span class='glyphicon glyphicon-trash'></span> </a> </td>";
-    //$tabla .="<td> <img src='".$value['url de la imagen']."'   width='150' heigth='150'> </td>";
     $tabla .="</tr>";
 }
 
