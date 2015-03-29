@@ -47,15 +47,16 @@ class UsuariosModel
 	}
 
 
-	// public function update(){
-	// 	$sql = 'UPDATE productos SET nombre= :nombre , cantidad = :cantidad, precio= :precio WHERE idproducto = :idproducto';
-	// 	$sth = $this->db->prepare($sql);
-	// 	$sth->execute(array(':idproducto' => $this->__GET("idproducto"),
-	// 				':nombre'=> $this->__GET("nombre"), 
-	// 				':cantidad'=>  $this->__GET("cantidad"),
-	// 				':precio'=>  $this->__GET("precio")));
-	// 	return $sth;
-	// }
+	public function update(){
+		$sql = 'UPDATE usuarios SET Nombre= :Nombre , Email= :Email, Usuario= :Usuario, Password= :Password   WHERE Cedula = :Cedula';
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(':Cedula' => $this->__GET("Cedula"),
+					':Nombre'=> $this->__GET("Nombre"), 
+					':Email'=>  $this->__GET("Email"),
+					':Usuario'=>  $this->__GET("Usuario"),
+					':Password'=>  $this->__GET("Password")));
+		return $sth;
+	}
 
 	// public function delete(){
 	// 	$sql = 'DELETE FROM productos WHERE idproducto = :idproducto';

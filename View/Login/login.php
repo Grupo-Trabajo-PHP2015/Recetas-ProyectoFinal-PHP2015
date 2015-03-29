@@ -8,21 +8,38 @@
     </head>
     <body>
         
+
+       <!-- Menu de navegacion horizontal -->
+                <nav id="menu_navegar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container-fluid">
+
+                    <!-- Integracion dispositivos moviles-->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="loginController.php"><img id="img1" class="img-responsive" src="../Assets/img/logo.png"></a></li>
+                            </ul>
+            
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Iniciar sesion</a></li>
+                                <li><a data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-plus-sign"></span> Registrarse</a></li>
+                                                               
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>        
+        <!-- Fin de menu horizontal -->
         <img  id="bg" src="../Assets/img/rata.png" alt="background" >
         
-    <center>
-        <div class="container">
-            <!-- Button trigger modal -->
-            <button type="button" style="margin-top: 14%" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                Ingrese
-            </button>
-            <button type="button" style="margin-top: 14%" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-                Registrese
-            </button>
-    </center>
-
-
-    <!-- Modal -->
+   <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -38,7 +55,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput">Usuario</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="Usuario" type="text" placeholder="@usuario" class="form-control input-md">
+                                    <input id="textinput" name="Usuario" type="text" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
@@ -56,7 +73,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="singlebutton"></label>
                                 <div class="col-md-4">
-                                    <button id="singlebutton" type="submit" name="session" class="btn btn-success">Inicie sessión</button>
+                                    <button id="singlebutton" type="submit" name="session" class="btn btn-success">Iniciar sessión</button>
                                 </div>
                             </div>
 
@@ -163,6 +180,8 @@
         </div>
     </div>
 </div>
+
+
 
 <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
 <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>

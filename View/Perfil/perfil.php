@@ -16,7 +16,7 @@
 
 <body>
        
-       <!-- Menu de navegacion horizontal -->
+<!-- Menu de navegacion horizontal -->
                 <nav id="menu_navegar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                     <div class="container-fluid">
 
@@ -44,13 +44,13 @@
                                         <li><a href="perfilController.php">Cuenta</a></li>
                                         <li class="divider"></li>
                                         <li>
-                                        	<form method="POST"action='<?php echo $_SERVER['PHP_SELF']; ?>' >
-										          <input type="hidden" name="cerrar">
+                                            <form method="POST"action='<?php echo $_SERVER['PHP_SELF']; ?>' >
+                                                  <input type="hidden" name="cerrar">
 
-										          <button class="button1" type="submit"><span class='glyphicon glyphicon-off'></span> Cerrar sessi&oacute;n</button>
-									          </form>
-									    </li>
-								    </ul>
+                                                  <button class="button1" type="submit"><span class='glyphicon glyphicon-off'></span> Cerrar sessi&oacute;n</button>
+                                              </form>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -59,21 +59,90 @@
                 </nav>        
         <!-- Fin de menu horizontal -->
 
-	<div id="encabezado">
-	<br>
-	<br>
-	<br>
-	<br>
-	  <h1>Bienvenido Querido <?php echo $_SESSION['Rol']; ?></h1>
-	 
-	</div>
 
+    <div id="encabezado">
+    <br>
+    <br>
+    <br>
+    <br>
+      <center><h1><?php echo $_SESSION['Nombre']; ?></h1></center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <form class="form-horizontal"  action="" method="POST" >
+                        <fieldset>
 
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label"  for="textinput">Cedula</label>  
+                                <div class="col-md-6">
+                                    <label id="textinput"  value="" name="Cedula" type="text"  class="form-control input-md"><?php echo $_SESSION['Cedula']; ?> </label>
 
+                                </div>
+                                <div>
+                                    <input id="textinput" style="display:none;" value="<?php echo $_SESSION['Cedula']; ?>" name="Cedula" type="text"  class="form-control input-md"> 
 
+                                </div>
+                            </div>
 
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Nombre</label>  
+                                <div class="col-md-6">
+                                    <input id="textinput" name="Nombre" value="<?php echo $_SESSION['Nombre']; ?>" type="text" placeholder="" class="form-control input-md">
 
+                                </div>
+                            </div>
 
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Email</label>  
+                                <div class="col-md-6">
+                                    <input id="textinput" name="Email"  value="<?php echo $_SESSION['Email']; ?>" type="email" placeholder="" class="form-control input-md">
+
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Usuario</label>  
+                                <div class="col-md-6">
+                                    <input id="textinput" name="Usuario"  value="<?php echo $_SESSION['Usuario']; ?>" type="text" placeholder="" class="form-control input-md">
+
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput" >Password</label>  
+                                <div class="col-md-6">
+                                    <input id="textinput" name="Password"  value="<?php echo $_SESSION['Password']; ?>" type="password" placeholder="" class="form-control input-md">
+
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Rol</label>  
+                                <div class="col-md-6">
+                                    <input id="textinput" disabled="" value="<?php echo $_SESSION['Rol']; ?>" name="Roles_idRol" type="text" placeholder="Usuario" class="form-control input-md"> 
+
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="singlebutton"></label>
+                                <div class="col-md-4">
+                                    <button id="singlebutton" type="submit" name="action"  value="Modificar" class="btn btn-success">Modificar Informacion</button>
+                                </div>
+                            </div>
+                            
+                        </fieldset>
+                    </form>
+     
+    </div>
 
 
 
@@ -158,7 +227,6 @@
         </div>
     </div>
 </div>
-
 <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
 <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
 

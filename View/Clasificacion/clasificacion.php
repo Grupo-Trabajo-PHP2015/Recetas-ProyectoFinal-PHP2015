@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>Recetas</title>
+        <title>Clasificacion</title>
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
 
     </head>
@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <center>
-                        <h1>Recetas</h1>
+                        <h1>Clasificación ingredientes</h1>
                     </center>
                 </div>
 
@@ -23,7 +23,7 @@
                         <fieldset>
 
                             <!-- Form Name -->
-                            <legend style="text-align: center" >Editar receta</legend>
+                            <legend style="text-align: center" >Editar clasificación</legend>
 
                             <!-- Text input-->
                             <div class="form-group">
