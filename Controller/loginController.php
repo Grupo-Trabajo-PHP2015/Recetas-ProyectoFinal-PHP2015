@@ -20,12 +20,23 @@ if (isset($_POST["session"])) {
         $Modulo = array(
             array(
                "Rol"=>"Administrador", 
-               "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li>
-                          <li><a href='ingredientesController.php'>Ingredientes</a></li>"
+               "Url"=>"<ul class='nav navbar-nav'>
+                                <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
+                            
+                                <li><a href='ingredientesController.php'>Ingredientes</a></li>
+                                
+                            </ul>
+            
+                            "
             ),
             array(
                 "Rol"=>"Usuario",
-                "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li> "
+                "Url"=>"<ul class='nav navbar-nav'>
+                                <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
+                                
+                            </ul>
+            
+                            "
                         
             ),
     
