@@ -38,12 +38,12 @@ class UsuariosModel
 		return $sth;
 		}
 
-	// public function read(){
-	// 	$sql = 'SELECT idproducto, nombre, cantidad, precio FROM productos';
-	// 	$sth = $this->db->prepare($sql);
-	// 	$sth->execute();
-	// 	return $sth->fetchAll();	
-	// }
+	public function read(){
+		$sql = 'SELECT Cedula,Nombre,Email,Usuario,Password,Roles_idRol FROM usuarios';
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
+		return $sth->fetchAll(PDO::FETCH_ASSOC);	
+	}
 
 	// public function update(){
 	// 	$sql = 'UPDATE productos SET nombre= :nombre , cantidad = :cantidad, precio= :precio WHERE idproducto = :idproducto';
