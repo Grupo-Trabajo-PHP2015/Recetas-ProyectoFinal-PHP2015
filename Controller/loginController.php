@@ -14,6 +14,21 @@ if (isset($_POST["session"])) {
     if (consultar()) {
         $mostrar = consultar();
         $session=false;
+
+        $Modulo = array(
+            array(
+               "Nombre"=>"Administrador",
+               "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li>
+                          <li><a href='ingredientesController.php'>Cliente</a></li>"
+            ),
+            array(
+                "Nombre"=>"Usuario",
+                "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li> "
+                        
+            ),
+    
+        );
+
         foreach ( $mostrar as $value ){ 
             if ( $value['Usuario'] == $_POST['Usuario'] && $value['Password']== $_POST['Password'] ) {
                  session_start();
@@ -24,6 +39,11 @@ if (isset($_POST["session"])) {
                  $_SESSION['Password'] = $value['Password'];
                  $_SESSION['Roles_idRol'] = $value['Roles_idRol'];
                  $session = true;
+                if ($value['Roles_idRol']==1) {
+                    $_SESSION['menu'] = $Modulo[1]['Url'];
+                }elseif($value['Roles_idRol']==2){
+                    $_SESSION['menu'] = $Modulo[0]['Url'];
+                };
              }
          
         }

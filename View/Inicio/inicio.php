@@ -23,6 +23,9 @@
 		  <div id="menu">
 	        <ul >
 
+	              <?php 
+	              echo $_SESSION["menu"];
+	               ?>
 	        </ul>
 	  </div>
 	</div>
