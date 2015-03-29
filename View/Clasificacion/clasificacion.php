@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal"  method="POST" action="" >
                         <fieldset>
 
                             <!-- Form Name -->
@@ -27,54 +27,28 @@
 
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="titulo">Titulo:</label>  
+                                <label class="col-md-4 control-label" for="titulo">ID:</label>  
                                 <div class="col-md-6">
-                                    <input id="titulo" name="titulo" type="text" placeholder="" class="form-control input-md">
+                                    <input id="titulo" name="titulo" type="text" placeholder="" class="form-control input-md" value=" <?php echo $id_n;  ?>  "  <?php echo $bloqueo; ?> >
 
                                 </div>
                             </div>
 
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="porciones">Porciones:</label>  
+                                <label class="col-md-4 control-label" for="porciones">Clasificacion:</label>  
                                 <div class="col-md-6">
-                                    <input id="porciones" name="porciones" type="text" placeholder="" class="form-control input-md">
+                                    <input id="nombre" name="nombre" type="text" placeholder="" class="form-control input-md"  value=" <?php echo $clasificacionEdi;  ?>"  >
 
                                 </div>
                             </div>
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="editar_descripcion">Descripción:</label>  
-                                <div class="col-md-6">
-                                    <input id="editar_descripcion" name="editar_descripcion" type="text" placeholder="" class="form-control input-md">
-
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="clasificacion">Clasificación:</label>  
-                                <div class="col-md-6">
-                                    <input id="clasificacion" name="clasificacion" type="text" placeholder="" class="form-control input-md">
-
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="usuario">Autor:</label>  
-                                <div class="col-md-6">
-                                    <input id="usuario" name="usuario" type="text" placeholder="" class="form-control input-md">
-
-                                </div>
-                            </div>
-
+                            
                             <!-- Button -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="editar"></label>
                                 <div class="col-md-4">
-                                    <button id="editar" name="editar" class="btn btn-success">Editar</button>
+                                    <button id="editar" name="editar" type="submit" class="btn btn-success">Editar</button>
                                 </div>
                             </div>
 
@@ -88,7 +62,7 @@
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#nuevo"  style="margin-right: 40%;margin-top: 10%;" >
-                            Agregar nuevas recetas
+                            Agregar clasificaciones
                         </button>
                     </center>
 
@@ -101,17 +75,15 @@
                         <table border="1" class="table table-bordred table-striped" style="text-align: center" >
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Nombre</th>
-                                    <th>Imagen</th>
-                                    <th>Descripción</th>
-                                    <th>URL</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
 
-
+                                    <?php echo $tabla;  ?>
 
                             </tbody>
                         </table>
@@ -126,62 +98,28 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Nueva receta</h4>
+                                <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Nueva clasificación</h4>
                             </div>
                             <div class="modal-body">
-                                <form class="form-horizontal">
+                                <form class="form-horizontal"  method="POST" action="" >
                                     <fieldset>
 
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="titulo">Titulo:</label>  
+                                            <label class="col-md-4 control-label" for="titulo">Nombre:</label>  
                                             <div class="col-md-6">
-                                                <input id="titulo" name="titulo" type="text" placeholder="" class="form-control input-md">
+                                                <input id="titulo" name="nombre" type="text" placeholder="" class="form-control input-md">
 
                                             </div>
                                         </div>
 
-                                        <!-- Textarea -->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="descripcion">Descripción:</label>
-                                            <div class="col-md-4">                     
-                                                <textarea class="form-control" id="descripcion" name="descripcion"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="porciones">Porciones:</label>  
-                                            <div class="col-md-6">
-                                                <input id="porciones" name="porciones" type="text" placeholder="" class="form-control input-md">
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="clasificacion">Clasificación:</label>  
-                                            <div class="col-md-6">
-                                                <input id="clasificacion" name="clasificacion" type="text" placeholder="" class="form-control input-md">
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="usuario">Autor:</label>  
-                                            <div class="col-md-6">
-                                                <input id="usuario" name="usuario" type="text" placeholder="" class="form-control input-md">
-
-                                            </div>
-                                        </div>
-
+                                     
                                         <!-- Button -->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="editar"></label>
+                                            <label class="col-md-4 control-label" for="guardar"></label>
                                             <div class="col-md-4">
-                                                <button id="editar" name="editar" class="btn btn-primary">Guardar</button>
+                                                <button id="guardar" name="guardar" type="submit" class="btn btn-primary">Guardar</button>
                                             </div>
                                         </div>
 
