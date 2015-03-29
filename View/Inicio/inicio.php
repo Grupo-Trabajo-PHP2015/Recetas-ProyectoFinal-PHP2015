@@ -18,6 +18,8 @@
 	 <?php 
 	    echo $_SESSION["Nombre"];
 	  ?>
+
+	  <h1><?php echo $_SESSION['Rol']; ?></h1>
 	 
 	</div>
 		  <div id="menu">
@@ -27,6 +29,11 @@
 	              echo $_SESSION["menu"];
 	               ?>
 	        </ul>
+
+	        <form method="POST"action='<?php echo $_SERVER['PHP_SELF']; ?>' >
+	          <input type="hidden" name="cerrar">
+	          <button  type="submit">Cerrar sessi&oacute;n</button>
+	          </form>
 	  </div>
 	</div>
 

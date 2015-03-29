@@ -1,4 +1,6 @@
 <?php 
+
+
         require_once '../Config/Config.php';
         require_once '../Library/DataBase.php';
         require_once '../Model/UsuariosModel.php';
@@ -7,7 +9,7 @@ function consultar() {
     $Usuario = $_POST['Usuario'];
     $Password = $_POST['Password'];
     $UsuariosModel = new UsuariosModel();
-    return $UsuariosModel->read(); 
+    return $UsuariosModel->read();           
 }
 
 if (isset($_POST["session"])) {
@@ -17,12 +19,12 @@ if (isset($_POST["session"])) {
 
         $Modulo = array(
             array(
-               "Nombre"=>"Administrador",
+               "Rol"=>"Administrador", 
                "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li>
-                          <li><a href='ingredientesController.php'>Cliente</a></li>"
+                          <li><a href='ingredientesController.php'>Ingredientes</a></li>"
             ),
             array(
-                "Nombre"=>"Usuario",
+                "Rol"=>"Usuario",
                 "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li> "
                         
             ),
@@ -38,11 +40,14 @@ if (isset($_POST["session"])) {
                  $_SESSION['Usuario'] = $value['Usuario'];
                  $_SESSION['Password'] = $value['Password'];
                  $_SESSION['Roles_idRol'] = $value['Roles_idRol'];
+
                  $session = true;
                 if ($value['Roles_idRol']==1) {
                     $_SESSION['menu'] = $Modulo[1]['Url'];
+                    $_SESSION['Rol'] = $Modulo[1]['Rol'];
                 }elseif($value['Roles_idRol']==2){
                     $_SESSION['menu'] = $Modulo[0]['Url'];
+                    $_SESSION['Rol'] = $Modulo[0]['Rol'];
                 };
              }
          
@@ -103,7 +108,60 @@ if (isset($_POST["action"])) {
         if (isset($_POST['Cedula'])!=null && isset($_POST['Nombre'])!=null && isset($_POST['Email'])!=null 
             && isset($_POST['Usuario'])!=null && isset($_POST['Password'])!=null && isset($_POST['Roles_idRol'])!=null) {
             create();
-            echo '<meta http-equiv="refresh" content="1;URL=inicioController.php" />';
+              if (consultar()) {
+        $mostrar = consultar();
+        $session=false;
+
+        $Modulo = array(
+            array(
+               "Rol"=>"Administrador", 
+               "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li>
+                          <li><a href='ingredientesController.php'>Ingredientes</a></li>"
+            ),
+            array(
+                "Rol"=>"Usuario",
+                "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li> "
+                        
+            ),
+    
+        );
+
+        foreach ( $mostrar as $value ){ 
+            if ( $value['Usuario'] == $_POST['Usuario'] && $value['Password']== $_POST['Password'] ) {
+                 session_start();
+                 $_SESSION['Cedula'] = $value['Cedula'];
+                 $_SESSION['Nombre'] = $value['Nombre'];
+                 $_SESSION['Email'] = $value['Email'];
+                 $_SESSION['Usuario'] = $value['Usuario'];
+                 $_SESSION['Password'] = $value['Password'];
+                 $_SESSION['Roles_idRol'] = $value['Roles_idRol'];
+
+                 $session = true;
+                if ($value['Roles_idRol']==1) {
+                    $_SESSION['menu'] = $Modulo[1]['Url'];
+                    $_SESSION['Rol'] = $Modulo[1]['Rol'];
+                }elseif($value['Roles_idRol']==2){
+                    $_SESSION['menu'] = $Modulo[0]['Url'];
+                    $_SESSION['Rol'] = $Modulo[0]['Rol'];
+                };
+             }
+         
+        }
+        
+        if ($session) {
+            
+            $mensaje = "Hola usuario ".$_SESSION['usuario'];
+            print "<script>alert('$mensaje')</script>";
+            header("location: inicioController.php");
+            
+        }  else {
+            
+            $mensaje = "el usuario no existe";
+            print "<script>alert('$mensaje')</script>";
+        }
+        
+  
+    } 
 
         }else{
             $mensaje = "Llenar todos los campos por favor";

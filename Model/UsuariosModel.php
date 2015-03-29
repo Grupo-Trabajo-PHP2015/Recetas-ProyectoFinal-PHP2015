@@ -10,7 +10,8 @@ class UsuariosModel
 	private $Password;
 	private $Roles_idRol;
 	private $db;
-
+	private $idRol;
+	private $Rol;
 	
 	function __construct()
 	{
@@ -44,6 +45,7 @@ class UsuariosModel
 		$sth->execute();
 		return $sth->fetchAll(PDO::FETCH_ASSOC);	
 	}
+
 
 	// public function update(){
 	// 	$sql = 'UPDATE productos SET nombre= :nombre , cantidad = :cantidad, precio= :precio WHERE idproducto = :idproducto';
