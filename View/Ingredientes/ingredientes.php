@@ -135,7 +135,7 @@
             <hr>
             <div class="row">
                 <div class="table-responsive">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <table border="1" class="table table-bordred table-striped" style="text-align: center" >
                             <thead>
                                 <tr>
@@ -205,6 +205,7 @@
                                                     <option value="2">Carnes</option>
                                                     <option value="3">Verduras</option>
                                                     <option value="4">Granos</option>
+                                            
                                                 </select>
                                             </div>
                                         </div>
@@ -232,10 +233,9 @@
             </div>
         </div>
 
-<<<<<<< HEAD
+
         <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
         <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
-=======
 
 
             
