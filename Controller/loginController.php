@@ -24,6 +24,7 @@ if (isset($_POST["session"])) {
                                 <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
                                 <li><a href='ingredientesController.php'>Ingredientes</a></li>
                                 <li><a href='recetasController.php'>Recetas</a></li>
+                                <li><a href='ClasificacionController.php'>Clasificacion</a></li>
                                 <li><a href='usuariosController.php'>Usuarios</a></li>
                             </ul>
             

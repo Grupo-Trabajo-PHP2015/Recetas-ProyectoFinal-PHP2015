@@ -1,5 +1,21 @@
 <?php
 
+session_start();
+
+if (empty($_SESSION['Usuario'])) {
+        
+        session_start();
+        session_destroy();
+        header('location: loginController.php');
+    }
+
+    if (isset($_POST['cerrar'])) {
+        
+        session_start();
+        session_destroy();
+        header('location: loginController.php');
+    }
+
 require_once '../Config/Config.php';
 require_once '../Library/DataBase.php';
 require_once '../Model/ModelClasificacion.php';
