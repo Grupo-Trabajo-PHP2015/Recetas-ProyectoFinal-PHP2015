@@ -21,6 +21,18 @@ class  Recetas {
     public function __SET($atributo, $valor) {
         $this->$atributo = $valor;
     }
+
+
+    public function consulta1() {
+        
+        $sql =" SELECT u.Nombre, r.Titulo, r.Porciones, r.Descripcion, r.Fecha_publicacion, c.Clasificacion FROM recetas r join usuarios u 
+        on r.Usuarios_Cedula=u.Cedula join clasificaciones c 
+        on r.Clasificaciones_idClasificacion=c.idClasificacion";
+        $sth = $this->db->prepare($sql);
+        $sth->execute();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
     
     public function Guardar() {
         
