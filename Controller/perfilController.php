@@ -28,7 +28,7 @@ if (empty($_SESSION['Usuario'])) {
     $Email=$_POST['Email'];
     $Usuario=$_POST['Usuario'];
     $Password=$_POST['Password'];
-
+    $Roles_idRol=$_POST['Roles_idRol'];
 
     $UsuariosModel = new UsuariosModel();
 
@@ -37,7 +37,7 @@ if (empty($_SESSION['Usuario'])) {
     $UsuariosModel->__SET($Email,"Email");
     $UsuariosModel->__SET($Usuario,"Usuario");
     $UsuariosModel->__SET($Password,"Password");
-
+    $UsuariosModel->__SET($Roles_idRol,"Roles_idRol");
 
  if ($UsuariosModel->update()) {
     $mensaje = "Modificacion satisfactoria";

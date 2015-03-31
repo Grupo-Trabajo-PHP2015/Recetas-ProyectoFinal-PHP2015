@@ -75,9 +75,13 @@
 
                              <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Cedula</label>  
+                                <label class="col-md-4 control-label"  for="textinput">Cedula</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="Cedula" value="<?php echo $Cedula; ?>"   type="text" placeholder="" class="form-control input-md">
+                                    <label id="textinput"  value="" name="Cedula" type="text"  class="form-control input-md"><?php echo $Cedula; ?> </label>
+
+                                </div>
+                                <div>
+                                    <input id="textinput" style="display:none;" value="<?php echo $Cedula; ?>" name="Cedula" type="text"  class="form-control input-md"> 
 
                                 </div>
                             </div>

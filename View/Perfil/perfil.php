@@ -126,7 +126,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput">Rol</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" disabled="" value="<?php echo $_SESSION['Rol']; ?>" name="Roles_idRol" type="text" placeholder="Usuario" class="form-control input-md"> 
+                                    <input id="textinput" value="<?php echo $_SESSION['Roles_idRol']; ?>" name="Roles_idRol" type="text" placeholder="Usuario" class="form-control input-md"> 
 
                                 </div>
                             </div>
