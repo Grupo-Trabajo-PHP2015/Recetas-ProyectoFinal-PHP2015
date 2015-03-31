@@ -2,11 +2,12 @@
 
 class  Recetas {
    
-    private $idIngrediente;
-    private $Nombre;
-    private $Desripcion;
-    private $Url;
-    private $Tipo_ingredientes_idTipo_ingrediente;
+    private $idReceta;
+    private $Titulo;
+    private $Descripcion;
+    private $Porciones;
+    private $Usuarios_Cedula;
+    private $Clasificaciones_idClasificacion;
     private $db; 
     
     function __construct() {
@@ -23,40 +24,40 @@ class  Recetas {
     
     public function Guardar() {
         
-        $sql =" INSERT INTO ingredientes VALUES ( :idIngrediente , :Nombre , :Desripcion , :Url , :Tipo_ingredientes_idTipo_ingrediente )";
+        $sql =" INSERT INTO recetas VALUES ( :idReceta , :Usuarios_Cedula , :Titulo , :Porciones , :Descripcion , :Clasificaciones_idClasificacion)";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente'),':Nombre'=>$this->__Get('Nombre'),':Desripcion'=>$this->__Get('Desripcion') ,':Url'=>$this->__Get('Url'),':Tipo_ingredientes_idTipo_ingrediente'=>$this->__Get('Tipo_ingredientes_idTipo_ingrediente') ) );
+        $sth->execute(array(':idReceta'=>$this->__Get('idReceta'),':Usuarios_Cedula'=>$this->__Get('Usuarios_Cedula'),':Titulo'=>$this->__Get('Titulo') ,':Porciones'=>$this->__Get('Porciones'),':Descripcion'=>$this->__Get('Descripcion'),':Clasificaciones_idClasificacion'=>$this->__Get('Clasificaciones_idClasificacion') ) );
         return $sth;
     }
     
     public function Modificar() {
         
-        $sql =" UPDATE ingredientes SET Nombre = :Nombre , Desripcion = :Desripcion  WHERE idIngrediente = :idIngrediente";
+        $sql =" UPDATE recetas SET Titulo = :Titulo , Descripcion = :Descripcion , Porciones = :Porciones WHERE idRecetas = :idRecetas";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente'),':Nombre'=>$this->__Get('Nombre'),':Desripcion'=>$this->__Get('Desripcion')  ) );
+        $sth->execute(array(':idRecetas'=>$this->__Get('idRecetas'),':Titulo'=>$this->__Get('Titulo') ,':Porciones'=>$this->__Get('Porciones'),':Descripcion'=>$this->__Get('Descripcion')  ) );
         return $sth;
     }
     
     public function Listar() {
         
-        $sql =" SELECT * FROM ingredientes";
+        $sql =" SELECT * FROM recetas";
         $sth = $this->db->prepare($sql);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function Eliminar() {
-        $sql =" DELETE FROM ingredientes WHERE idIngrediente = :idIngrediente";
+        $sql =" DELETE FROM recetas WHERE idRecetas = :idRecetas";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idIngrediente'=>$this->__Get('idIngrediente') ) );
+        $sth->execute(array(':idRecetas'=>$this->__Get('idRecetas') ) );
         return $sth;
     }
     
     function Buscar(){
     
-    $sql = 'SELECT idIngrediente , Nombre, Desripcion, Url  FROM ingredientes WHERE idIngrediente = :idIngrediente';
+    $sql = 'SELECT idRecetas , Usuarios_Cedula , Porciones  , Descripcion , Clasificaciones_idClasificacion FROM recetas WHERE idRecetas = :idRecetas';
     $sth = $this->db->prepare($sql);
-    $sth->execute(array(':idIngrediente' =>  $this->__GET("idIngrediente")));
+    $sth->execute(array(':idRecetas' =>  $this->__GET("idRecetas")));
     return $sth->fetchAll();
 }
     

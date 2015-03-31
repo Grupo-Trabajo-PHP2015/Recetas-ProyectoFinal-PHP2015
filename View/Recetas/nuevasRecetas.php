@@ -102,6 +102,24 @@
                                     <td> <hr> </td>
                                 </tr>
                                 <tr>
+                                    <td> <label class="col-md-4 control-label" for="selectbasic">Clasificación</label> </td>
+                                    <td>   
+                                        <div class="col-md-4">
+                                            <select id="selectbasic" name="clasificacion" class="form-control">
+                                                <option value="1">Italiana</option>
+                                                <option value="2">Francesa</option>
+                                                <option value="3">Peruana</option>
+                                                <option value="4">China</option>
+                                                <option value="5">Japonesa</option>
+                                            </select>
+                                        </div> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <hr> </td>
+                                    <td> <hr> </td>
+                                </tr>
+                                <tr>
                                     <td>  <label class="col-md-3 control-label" >Porciones:</label> </td>
                                     <td>  <input name="porciones" type="number" min="2" max="20" value="2" class="form-control input-md" > </td>
                                 </tr>
@@ -111,7 +129,11 @@
                                 </tr>
                                 <tr>
                                     <td>  <label class="col-md-3 control-label" >Autor:</label> </td>
-                                    <td>  <input name="autor" style="text-align: center" type="text" placeholder="Nombre usuario" class="form-control input-md" > </td>
+                                    <td>  
+                                        <input name="autor" id="autor" style="text-align: center" type="text" placeholder="Nombre usuario" class="form-control input-md" value=" <?php echo $_SESSION['Nombre'] ?>  " > 
+                                        
+                                        <input name="idUsuario" id="idUsuario" style="text-align: center" type="hidden" class="form-control input-md" value=" <?php echo $_SESSION['Cedula']; ?> " >
+                                    </td>
                                 </tr>
                             </table>  
 
@@ -134,7 +156,6 @@
                                             <thead>
                                                 <tr>
                                                     <th>Nombre</th>
-                                                    <th>Cantidad</th>
                                                     <th>Imagen</th>
                                                 </tr>
                                             </thead>
@@ -144,17 +165,16 @@
 
                                             </tbody>
                                         </table>
-                                        
+
                                     </div>
                                     <div class="col-md-4" >
-                                        <div class="panel panel-default" style="margin-top: 20%">
+                                        <div id="carrito" class="panel panel-default" style="margin-top: 20%">
                                             <div  class="panel-heading">Ingredientes necesario</div>
-                                            <div id="carrito" class="panel-body">
-                                                
+                                            <div  class="panel-body">
+
                                                 <span id="total"> </span> 
                                                 <span id="cant"> </span>
-                                                <!-- <span class="badge">14</span> -->
-                                                <input type="hidden" name="a" id="a" >
+                                                <input type="hidden" name="ListaIngrediente" id="ListaIngrediente" >
                                             </div>
                                         </div>
                                     </div>  
@@ -169,7 +189,15 @@
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <h3>Paso 3</h3>
-                            <button class="btn btn-success btn-lg pull-right" type="submit">Finalizar</button>
+                            <diV class="row">
+                                <div class="col-md-6">
+                                    <h1>Cantidad</h1>
+                                    <ul id="imprimir" class='list-group'>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="btn btn-success btn-lg pull-right" name="guardar" type="submit">Finalizar</button>
                         </div>
                     </div>
                 </div>
@@ -184,25 +212,38 @@
         <script type="text/javascript">
 
             $(document).on('ready', function () {
-                
+
+
+
                 $('#selecion img').draggable({
                     helper: 'clone'
                 });
-                
 
+                $("#autor").attr("disabled","true");
+                
                 $('#carrito').droppable({
                     drop: EventoDrop
                 });
 
                 function  EventoDrop(evento, ui) {
                     var draggable = ui.draggable;
-
+                    
+                    $("#autor").removeAttr("disabled");
+                    var sabor = $('#ListaIngrediente').val();
                     var total = $('#total').text();
                     total = total.concat(draggable.data('ingrediente'));
+                    sabor = sabor.concat(draggable.data('ingrediente'));
+
+                    $('#ListaIngrediente').val(sabor);
                     $('#total').text(total);
 
-
-
+                    var arreglo = [];
+                    arreglo[arreglo.length] = draggable.data('ingrediente');
+                    
+                    var lista = "";
+                    lista += "<li class='list-group-item' >" + arreglo[0] + "<div class='col-md-4'> <input type='number' style='text-align:center' id='cantidad' class='cantidad' name=" + draggable.data('ingrediente') + " min='2' max='20' value='2' class='form-control input-md' > </div> </li>";
+                    $('#imprimir').append(lista);
+                    ;
                 }
             });
 
