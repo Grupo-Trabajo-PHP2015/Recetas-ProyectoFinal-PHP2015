@@ -119,11 +119,18 @@ if (isset($_POST["action"])) {
         $tabla .="<td>" . $value['Email'] . "</td>";
         $tabla .="<td>" . $value['Usuario'] . "</td>";
         $tabla .="<td>" . $value['Password'] . "</td>";
-        $tabla .="<td>" . $value['Roles_idRol'] . "</td>";
+        $tabla .="<td>" . $value['Rol'] . "</td>";
         $tabla .="<td> <a href='usuariosController.php?editar=" . $value['Cedula'] . "'  class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
         $tabla .="<td> <a href='usuariosController.php?delete=" . $value['Cedula'] . "' class='btn btn-danger btn-xs' role='button'>  <span class='glyphicon glyphicon-trash'></span> </a> </td>";
         $tabla .="</tr>";
     }
+
+    $UsuariosModel = new UsuariosModel();
+    $selecte = "";
+    foreach ($UsuariosModel->read2()as $value) {
+        $selecte.='<option value="'.$value['idRol'].'">'.$value['Rol'].'</option>';
+          }
+    
 
 include ('../View/Usuarios/usuarios.php');
  ?>

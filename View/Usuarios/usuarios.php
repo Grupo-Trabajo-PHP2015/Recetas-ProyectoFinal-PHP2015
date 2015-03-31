@@ -131,6 +131,17 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Rol</label>  
+                                <div class="col-md-6">
+                                    
+                            <select >
+                        <?php echo $selecte; ?>   
+                    </select>
+                                </div>
+                            </div>
+
+
                             <!-- Button -->
                            <div class="form-group">
                                 <label class="col-md-4 control-label" for="singlebutton"></label>

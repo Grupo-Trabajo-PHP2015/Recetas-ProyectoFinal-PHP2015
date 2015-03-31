@@ -26,6 +26,16 @@ class UsuariosModel
 		$this->$atributo = $valor;
 	}
 
+
+	public function read2(){
+
+		$sql = 'SELECT idRol, Rol FROM roles ';
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
+		return $sth->fetchAll(PDO::FETCH_ASSOC);	
+
+	}
+
 	public function create(){
 
 		$sql = 'INSERT INTO usuarios (Cedula,Nombre,Email,Usuario,Password,Roles_idRol)  VALUES (:Cedula, :Nombre, :Email, :Usuario, :Password, :Roles_idRol)';
@@ -40,7 +50,8 @@ class UsuariosModel
 		}
 
 	public function read(){
-		$sql = 'SELECT Cedula,Nombre,Email,Usuario,Password,Roles_idRol FROM usuarios';
+		$sql = 'SELECT u.Cedula, u.Nombre,u.Email,u.Usuario,u.Password,r.Rol FROM usuarios u 
+		join roles r on u.Roles_idRol=r.idRol';
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 		return $sth->fetchAll(PDO::FETCH_ASSOC);	
