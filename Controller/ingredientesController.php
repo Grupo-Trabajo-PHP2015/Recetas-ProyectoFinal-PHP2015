@@ -123,7 +123,7 @@ foreach ($model->Listar() as $value) {
     $tabla .="</tr>";
 }
 
-//$modelClasificacion = new Clasificacion();
+$modelClasificacion = new Clasificacion();
 //
 //foreach ( $modelClasificacion->Listar() as $value ){
 //    

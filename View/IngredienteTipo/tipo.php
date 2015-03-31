@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>Clasificacion</title>
+        <title>TipoIngrediente</title>
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
     </head>
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <center>
-                        <h1>Clasificación recetas</h1>
+                        <h1>Tipos de ingredientes</h1>
                     </center>
                 </div>
 
@@ -65,7 +65,7 @@
                         <fieldset>
 
                             <!-- Form Name -->
-                            <legend style="text-align: center" >Editar clasificación</legend>
+                            <legend style="text-align: center" >Editar tipo</legend>
 
                             <!-- Text input-->
                             <div class="form-group">
@@ -78,7 +78,7 @@
 
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="porciones">Clasificacion:</label>  
+                                <label class="col-md-4 control-label" for="porciones">Tipo:</label>  
                                 <div class="col-md-6">
                                     <input id="nombre" name="nombre" type="text" placeholder="" class="form-control input-md"  value=" <?php echo $clasificacionEdi;  ?>"  >
 
@@ -104,7 +104,7 @@
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#nuevo"  style="margin-right: 40%;margin-top: 10%;" >
-                            Agregar clasificaciones
+                            Agregar tipos
                         </button>
                     </center>
 
@@ -140,7 +140,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Nueva clasificación</h4>
+                                <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Nuevo tipo</h4>
                             </div>
                             <div class="modal-body">
                                 <form class="form-horizontal"  method="POST" action="" >
@@ -151,7 +151,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="titulo">Nombre:</label>  
                                             <div class="col-md-6">
-                                                <input id="titulo" name="nombre" type="text" placeholder="" class="form-control input-md">
+                                                <input id="titulo" name="nombre" type="text" placeholder="" class="form-control input-md" required="" >
 
                                             </div>
                                         </div>

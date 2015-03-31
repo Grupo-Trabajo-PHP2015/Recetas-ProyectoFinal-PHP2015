@@ -10,18 +10,17 @@ foreach($_POST as $nombre_campo => $valor){
             $_POST[$nombre_campo]== $_POST["descripcion"] ||
              $_POST[$nombre_campo]== $_POST["autor"] ||
              $_POST[$nombre_campo]== $_POST["idUsuario"] ||
-            $_POST[$nombre_campo]== $_POST["ListaIngrediente"] ||
-            $_POST[$nombre_campo]== $_POST["guardar"]
+            $_POST[$nombre_campo]== $_POST["ListaIngrediente"] 
 
             
             ) {
         
-        echo " recetas ".$nombre_campo . "=" . $valor . "<br>";
+        //echo " recetas ".$nombre_campo . "=" . $valor . "<br>";
    
         
-    }  else {
+    }elseif( $_POST[$nombre_campo] != $_POST['guardar']) {
         
-    echo "<br><br><br> Cantidad  ".$nombre_campo . "=" . $valor . "<br>"; 
+    echo "<br><br><br> Cantidad y id: ".$nombre_campo . "=" . $valor . "<br>"; 
         
     }
     
