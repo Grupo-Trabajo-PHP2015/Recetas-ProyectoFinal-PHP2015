@@ -48,29 +48,30 @@ class UsuariosModel
 
 
 	public function update(){
-		$sql = 'UPDATE usuarios SET Nombre= :Nombre , Email= :Email, Usuario= :Usuario, Password= :Password   WHERE Cedula = :Cedula';
+		$sql = 'UPDATE usuarios SET Nombre= :Nombre , Email= :Email, Usuario= :Usuario, Password= :Password , Roles_idRol= :Roles_idRol  WHERE Cedula = :Cedula';
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(':Cedula' => $this->__GET("Cedula"),
 					':Nombre'=> $this->__GET("Nombre"), 
 					':Email'=>  $this->__GET("Email"),
 					':Usuario'=>  $this->__GET("Usuario"),
-					':Password'=>  $this->__GET("Password")));
+					':Password'=>  $this->__GET("Password"),
+					':Roles_idRol'=>  $this->__GET("Roles_idRol")));
 		return $sth;
 	}
 
-	// public function delete(){
-	// 	$sql = 'DELETE FROM productos WHERE idproducto = :idproducto';
-	// 	$sth = $this->db->prepare($sql);
-	// 	$sth->execute(array(':idproducto' =>  $this->__GET("idproducto")));
-	// 	return $sth;
-	// }
+	public function delete(){
+		$sql = 'DELETE FROM usuarios WHERE Cedula = :Cedula';
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(':Cedula' =>  $this->__GET("Cedula")));
+		return $sth;
+	}
 
-	// public function find(){
-	// 	$sql = 'SELECT idproducto, nombre, cantidad, precio FROM productos WHERE idproducto = :idproducto';
-	// 	$sth = $this->db->prepare($sql);
-	// 	$sth->execute(array(':idproducto' =>  $this->__GET("idproducto")));
-	// 	return $sth->fetchAll();
-	// }
+	public function find(){
+		$sql = 'SELECT Cedula,Nombre,Email,Usuario,Password,Roles_idRol FROM usuarios WHERE Cedula = :Cedula';
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(':Cedula' =>  $this->__GET("Cedula")));
+		return $sth->fetchAll();
+	}
 }
 
 ?>

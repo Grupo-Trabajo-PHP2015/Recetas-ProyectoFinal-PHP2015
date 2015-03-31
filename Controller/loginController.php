@@ -22,9 +22,9 @@ if (isset($_POST["session"])) {
                "Rol"=>"Administrador", 
                "Url"=>"<ul class='nav navbar-nav'>
                                 <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
-                            
                                 <li><a href='ingredientesController.php'>Ingredientes</a></li>
-                                
+                                <li><a href='recetasController.php'>Recetas</a></li>
+                                <li><a href='usuariosController.php'>Ingredientes</a></li>
                             </ul>
             
                             "
@@ -126,12 +126,23 @@ if (isset($_POST["action"])) {
         $Modulo = array(
             array(
                "Rol"=>"Administrador", 
-               "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li>
-                          <li><a href='ingredientesController.php'>Ingredientes</a></li>"
+               "Url"=>"<ul class='nav navbar-nav'>
+                                <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
+                            
+                                <li><a href='ingredientesController.php'>Ingredientes</a></li>
+                                
+                            </ul>
+            
+                            "
             ),
             array(
                 "Rol"=>"Usuario",
-                "Url"=>"<li ><a href='inicioController.php'>Inicio</a></li> "
+                "Url"=>"<ul class='nav navbar-nav'>
+                                <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
+                                
+                            </ul>
+            
+                            "
                         
             ),
     

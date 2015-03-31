@@ -6,7 +6,14 @@
     width: 100%;
     height: 100%;
 }
-
+#tablau{
+    margin-top: 50px;
+    border: 2px solid black;
+    width: 60%;
+    height: auto;
+    margin-left: 200px;
+    padding-left: 20px;
+}
 .btn-primary{
 
     background: #7d7e7d; /* Old browsers */
