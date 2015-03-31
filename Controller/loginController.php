@@ -9,7 +9,7 @@ function consultar() {
     $Usuario = $_POST['Usuario'];
     $Password = $_POST['Password'];
     $UsuariosModel = new UsuariosModel();
-    return $UsuariosModel->read();           
+    return $UsuariosModel->read3();           
 }
 
 if (isset($_POST["session"])) {
@@ -18,8 +18,7 @@ if (isset($_POST["session"])) {
         $session=false;
 
         $Modulo = array(
-            array(
-               "Rol"=>"Administrador", 
+            array( 
                "Url"=>"<ul class='nav navbar-nav'>
                                 <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
                                 <li><a href='ingredientesController.php'>Ingredientes</a></li>
@@ -31,7 +30,6 @@ if (isset($_POST["session"])) {
                             "
             ),
             array(
-                "Rol"=>"Usuario",
                 "Url"=>"<ul class='nav navbar-nav'>
                                 <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
                                 
@@ -51,15 +49,14 @@ if (isset($_POST["session"])) {
                  $_SESSION['Email'] = $value['Email'];
                  $_SESSION['Usuario'] = $value['Usuario'];
                  $_SESSION['Password'] = $value['Password'];
-                 $_SESSION['Roles_idRol'] = $value['Roles_idRol'];
+                 $_SESSION['idRol'] = $value['idRol'];
+                 $_SESSION['Rol'] = $value['Rol'];
 
                  $session = true;
-                if ($value['Roles_idRol']==1) {
+                if ($value['idRol']==1) {
                     $_SESSION['menu'] = $Modulo[1]['Url'];
-                    $_SESSION['Rol'] = $Modulo[1]['Rol'];
-                }elseif($value['Roles_idRol']==2){
+                }elseif($value['idRol']==2){
                     $_SESSION['menu'] = $Modulo[0]['Url'];
-                    $_SESSION['Rol'] = $Modulo[0]['Rol'];
                 };
              }
          
@@ -157,15 +154,14 @@ if (isset($_POST["action"])) {
                  $_SESSION['Email'] = $value['Email'];
                  $_SESSION['Usuario'] = $value['Usuario'];
                  $_SESSION['Password'] = $value['Password'];
-                 $_SESSION['Roles_idRol'] = $value['Roles_idRol'];
+                 $_SESSION['idRol'] = $value['idRol'];
+                 $_SESSION['Rol'] = $value['Rol'];
 
                  $session = true;
-                if ($value['Roles_idRol']==1) {
+                if ($value['idRol']==1) {
                     $_SESSION['menu'] = $Modulo[1]['Url'];
-                    $_SESSION['Rol'] = $Modulo[1]['Rol'];
-                }elseif($value['Roles_idRol']==2){
+                }elseif($value['idRol']==2){
                     $_SESSION['menu'] = $Modulo[0]['Url'];
-                    $_SESSION['Rol'] = $Modulo[0]['Rol'];
                 };
              }
          

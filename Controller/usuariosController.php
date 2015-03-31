@@ -74,6 +74,7 @@ if (isset($_POST["action"])) {
         $Usuario = "";
         $Password = "";
         $Roles_idRol ="";
+        $Rol ="";
 
     if (isset($_GET["editar"])) {
 
@@ -89,6 +90,7 @@ if (isset($_POST["action"])) {
         $Usuario = $value["Usuario"];
         $Password = $value["Password"];
         $Roles_idRol = $value["Roles_idRol"];
+        $Rol = $value["Rol"];
         $bloqueo = "disabled='true'";
     }
 

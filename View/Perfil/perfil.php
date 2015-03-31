@@ -124,9 +124,13 @@
 
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Rol</label>  
+                                <label class="col-md-4 control-label"  for="textinput">Rol</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" value="<?php echo $_SESSION['Roles_idRol']; ?>" name="Roles_idRol" type="text" placeholder="Usuario" class="form-control input-md"> 
+                                    <label id="textinput"  value="" name="Cedula" type="text"  class="form-control input-md"><?php echo $_SESSION['Rol']; ?> </label>
+
+                                </div>
+                                <div>
+                                    <input id="textinput" style="display:none;" value="<?php echo $_SESSION['idRol']; ?>" name="Roles_idRol" type="text" placeholder="Usuario" class="form-control input-md"> 
 
                                 </div>
                             </div>

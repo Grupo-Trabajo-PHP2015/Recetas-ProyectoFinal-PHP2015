@@ -36,6 +36,16 @@ class UsuariosModel
 
 	}
 
+	public function read3(){
+
+		$sql = 'SELECT u.Cedula, u.Nombre,u.Email,u.Usuario,u.Password,r.Rol, r.idRol FROM usuarios u 
+		join roles r on u.Roles_idRol=r.idRol ' ;
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
+		return $sth->fetchAll(PDO::FETCH_ASSOC);	
+
+	}
+
 	public function create(){
 
 		$sql = 'INSERT INTO usuarios (Cedula,Nombre,Email,Usuario,Password,Roles_idRol)  VALUES (:Cedula, :Nombre, :Email, :Usuario, :Password, :Roles_idRol)';
@@ -50,8 +60,8 @@ class UsuariosModel
 		}
 
 	public function read(){
-		$sql = 'SELECT u.Cedula, u.Nombre,u.Email,u.Usuario,u.Password,r.Rol FROM usuarios u 
-		join roles r on u.Roles_idRol=r.idRol';
+		$sql = 'SELECT u.Cedula, u.Nombre,u.Email,u.Usuario,u.Password,r.Rol, r.idRol FROM usuarios u 
+		join roles r on u.Roles_idRol=r.idRol where r.idRol != 2' ;
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 		return $sth->fetchAll(PDO::FETCH_ASSOC);	
@@ -78,7 +88,8 @@ class UsuariosModel
 	}
 
 	public function find(){
-		$sql = 'SELECT Cedula,Nombre,Email,Usuario,Password,Roles_idRol FROM usuarios WHERE Cedula = :Cedula';
+		$sql = 'SELECT u.Cedula, u.Nombre,u.Email,u.Usuario,u.Password,r.Rol, r.idRol FROM usuarios u 
+		join roles r on u.Roles_idRol=r.idRol WHERE Cedula = :Cedula';
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(':Cedula' =>  $this->__GET("Cedula")));
 		return $sth->fetchAll();

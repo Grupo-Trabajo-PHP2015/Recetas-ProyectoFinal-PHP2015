@@ -8,9 +8,10 @@
     <meta name="author" content="">
 
     <title>Inicio</title>
+    <link href="css/bootstrap-select.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
 
 </head>
 
@@ -124,20 +125,20 @@
 
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Rol</label>  
+                                <label class="col-md-4 control-label" for="textinput">Rol Actual</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput"  value="<?php echo $Roles_idRol; ?>" name="Roles_idRol" type="text" placeholder="Usuario" class="form-control input-md"> 
+                                    <label id="textinput" type="text" placeholder="Usuario" class="form-control input-md"><?php echo $Rol; ?> </label> 
 
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Rol</label>  
+                                <label class="col-md-4 control-label" for="textinput">Rol a cambiar</label>  
                                 <div class="col-md-6">
                                     
-                            <select >
-                        <?php echo $selecte; ?>   
-                    </select>
+                                <select class="selectpicker" name="Roles_idRol">
+                                    <?php echo $selecte; ?>   
+                                </select>
                                 </div>
                             </div>
 
@@ -270,6 +271,9 @@
 <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
 <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
 <script src="../Assets/js/jquery.dataTables.js"></script>
+ <script src="js/bootstrap-select.js"></script>
+        <script>$('.selectpicker').selectpicker({});</script>
+
     <script class="init">
 
 $(document).ready(function() {
@@ -278,7 +282,7 @@ $(document).ready(function() {
 } );
 
     </script>
-
+       
 </body>
 
 </html>
