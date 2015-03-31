@@ -20,6 +20,19 @@ class  Ingredientes {
     public function __SET($atributo, $valor) {
         $this->$atributo = $valor;
     }
+
+
+    public function consulta1() {
+        
+        $sql =" SELECT r.Nombre, i.Nombre, x.Cantidad 
+        FROM recetas r join recetas_has_ingredientes x 
+        on r.idReceta=x.recetas_idReceta join ingredientes i
+        on x.ingredientes_idIngrediente= i.idIngrediente group by r.Nombre";
+        $sth = $this->db->prepare($sql);
+        $sth->execute();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
     
     public function Guardar() {
         
