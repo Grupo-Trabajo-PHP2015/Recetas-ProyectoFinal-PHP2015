@@ -90,7 +90,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="editar"></label>
                                 <div class="col-md-4">
-                                    <button id="editar" name="editar" type="submit" class="btn btn-success">Editar</button>
+                                    <button id="editar" name="editar" type="submit" class="btn btn-success" >Editar</button>
                                 </div>
                             </div>
 
