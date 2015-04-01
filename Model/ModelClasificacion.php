@@ -57,6 +57,13 @@ class  Clasificacion {
     return $sth->fetchAll();
 }
     
+ public function Select() {
+
+        $sql = 'SELECT idClasificacion , Clasificacion FROM clasificaciones ';
+        $sth = $this->db->prepare($sql);
+        $sth->execute();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
     
 }
 

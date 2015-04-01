@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <form role="form" action="formulario.php" method="POST">
+            <form role="form" action="" method="POST">
                 <div class="row setup-content" id="step-1">
                     <div class="col-xs-12">
                         <div class="col-md-12">
@@ -104,13 +104,11 @@
                                 <tr>
                                     <td> <label class="col-md-4 control-label" for="selectbasic">Clasificación</label> </td>
                                     <td>   
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <select id="selectbasic" name="clasificacion" class="form-control">
-                                                <option value="1">Italiana</option>
-                                                <option value="2">Francesa</option>
-                                                <option value="3">Peruana</option>
-                                                <option value="4">China</option>
-                                                <option value="5">Japonesa</option>
+                                                
+                                                <?php echo $select; ?>
+                                                
                                             </select>
                                         </div> 
                                     </td>
@@ -239,9 +237,9 @@
 
                     var arreglo = [];
                     arreglo[arreglo.length] = draggable.data('ingrediente');
-                    
+                    //<input type='hidden' style='text-align:center' name="+draggable.data('ingrediente')+" value="+draggable.data('id')+" class='form-control input-md' >
                     var lista = "";
-                    lista += "<li class='list-group-item' >" + arreglo[0] + "<div class='col-md-4'> <input type='number' style='text-align:center' id='cantidad' class='cantidad' name=" + draggable.data('ingrediente') + " min='2' max='20' value='2' class='form-control input-md' > </div> <input type='hidden' style='text-align:center' name="+draggable.data('ingrediente')+" value="+draggable.data('id')+" class='form-control input-md' > </li>";
+                    lista += "<li class='list-group-item' >" + arreglo[0] + "<div class='col-md-4'> <input type='number' style='text-align:center' id='cantidad' class='cantidad' name=" + draggable.data('id') + " min='2' max='20' value='2' class='form-control input-md' > </div>  </li>";
                     $('#imprimir').append(lista);
                     ;
                 }

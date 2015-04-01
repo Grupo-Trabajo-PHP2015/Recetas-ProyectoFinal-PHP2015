@@ -198,13 +198,11 @@
                                         </div>
                                         <!-- Select Basic -->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="clasificacion">Clasificación</label>
+                                            <label class="col-md-4 control-label" for="clasificacion">Tipo Ingrediente:</label>
                                             <div class="col-md-5">
-                                                <select id="clasificacion" name="clasificacion" class="form-control">
-                                                    <option value="1">Salsas</option>
-                                                    <option value="2">Carnes</option>
-                                                    <option value="3">Verduras</option>
-                                                    <option value="4">Granos</option>
+                                                <select id="clasificacion"  name="clasificacion" class="form-control">
+                                                   
+                                                     <?php echo $select; ?>
                                             
                                                 </select>
                                             </div>

@@ -18,7 +18,7 @@ if (empty($_SESSION['Usuario'])) {
 require_once '../Config/Config.php';
 require_once '../Library/DataBase.php';
 require_once '../Model/ModelIngredientes.php';
-require_once '../Model/ModelClasificacion.php';
+require_once '../Model/ModelTipoIngrediente.php';
 
 $id_n = "";
 $nombre = "";
@@ -123,14 +123,14 @@ foreach ($model->Listar() as $value) {
     $tabla .="</tr>";
 }
 
-$modelClasificacion = new Clasificacion();
-//
-//foreach ( $modelClasificacion->Listar() as $value ){
-//    
-//    $select="<option>";
-//    $select=$value['Clasificacion'];
-//    $select="</option>";
-//}
+$modelTipo = new TipoIngrediente();
+
+$select="";
+        
+foreach ( $modelTipo->Select() as $value ){
+    
+    $select.='<option value="'.$value['idTipo_ingrediente'].'" >'.$value['Tipo'].'</option>';
+}
 
 
 include_once "../View/Ingredientes/ingredientes.php";
