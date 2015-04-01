@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview" />
+        <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="../Assets/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../Assets/css/style2.css" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="../Assets/css/noscript.css" />
+        </noscript>
     <title>Inicio</title>
 
     <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
@@ -66,25 +76,89 @@
 	<br>
 	<br>
 	  <h1>Bienvenido Querido <?php echo $_SESSION['Rol']; ?></h1>
-	 <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
+	 
 	</div>
 
 
-
-
-
-
+<div class="container">
+            <div class="header">
+                
+                <span class="right">
+                    <a href="recetasController.php">
+                        <strong>Encuentra aqui las mejores recetas</strong>
+                    </a>
+                </span>
+                <div class="clr"></div>
+            </div>
+            <h1>Las mejores recetas para cocinas de todo tipo</h1>
+            <div class="wrapper">
+                <div id="ei-slider" class="ei-slider">
+                    <ul class="ei-slider-large">
+                        <li>
+                            <img src="../Assets/img/large/6.jpg" alt="image06"/>
+                            <div class="ei-title">
+                                <h2>Tacos</h2>
+                                <h3>Mexicanos</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../Assets/img/large/1.jpg" alt="image01" />
+                            <div class="ei-title">
+                                <h2>Hamburguesa</h2>
+                                <h3>Americana</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../Assets/img/large/2.jpg" alt="image02" />
+                            <div class="ei-title">
+                                <h2>Chuzos de pollo</h2>
+                                <h3>Colombianos</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../Assets/img/large/3.jpg" alt="image03"/>
+                            <div class="ei-title">
+                                <h2>Spaguetti a' carbonara</h2>
+                                <h3>Italianos</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../Assets/img/large/4.jpg" alt="image04"/>
+                            <div class="ei-title">
+                                <h2>Chorizos</h2>
+                                <h3>Peruanos</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../Assets/img/large/5.jpg" alt="image05"/>
+                            <div class="ei-title">
+                                <h2>Langosta</h2>
+                                <h3>Mediterranea</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../Assets/img/large/7.jpg" alt="image07"/>
+                            <div class="ei-title">
+                                <h2>Quesadillas</h2>
+                                <h3>Ecuatorianas</h3>
+                            </div>
+                        </li>
+                    </ul><!-- ei-slider-large -->
+                    <ul class="ei-slider-thumbs">
+                        <li class="ei-slider-element">Current</li>
+                        <li><a href="#">Slide 6</a><img src="../Assets/img/thumbs/6.jpg" alt="thumb06" /></li>
+                        <li><a href="#">Slide 1</a><img src="../Assets/img/thumbs/1.jpg" alt="thumb01" /></li>
+                        <li><a href="#">Slide 2</a><img src="../Assets/img/thumbs/2.jpg" alt="thumb02" /></li>
+                        <li><a href="#">Slide 3</a><img src="../Assets/img/thumbs/3.jpg" alt="thumb03" /></li>
+                        <li><a href="#">Slide 4</a><img src="../Assets/img/thumbs/4.jpg" alt="thumb04" /></li>
+                        <li><a href="#">Slide 5</a><img src="../Assets/img/thumbs/5.jpg" alt="thumb05" /></li>
+                        <li><a href="#">Slide 7</a><img src="../Assets/img/thumbs/7.jpg" alt="thumb07" /></li>
+                    </ul><!-- ei-slider-thumbs -->
+                </div><!-- ei-slider -->
+               
+            </div><!-- wrapper -->
+        </div>
+        
 
 
 
@@ -171,10 +245,11 @@
     </div>
 </div>
 
-
+</div>
 <hr>
 
         <footer>
+        <div class="row1">
             <div class="row">
                 <div class="col-lg-12">
                 <div class="col-lg-3 col-md-6">
@@ -188,7 +263,7 @@
                         <div class="caption">
                             <div class="blur"></div>
                             <div class="caption-text">
-                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px; font-size:20px;">Esteban Varela</h3>
+                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Esteban Varela</h3>
                                 <p>Tecnologo en Analisis y Desarrollo de Sistemas de Informacion...</p>
                                 <a class=" btn btn-default" href="https://plus.google.com/u/0/107465545975757511169/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
                             </div>
@@ -204,7 +279,7 @@
                         <div class="caption">
                             <div class="blur"></div>
                             <div class="caption-text">
-                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px; font-size:20px;">Tatiana Betancur</h3>
+                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Tatiana Betancur</h3>
                                 <p>Tecnologa en Analisis y Desarrollo de Sistemas de Informacion...</p>
                                 <a class=" btn btn-default" href="https://plus.google.com/u/0/100599910164672027111/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
                             </div>
@@ -269,11 +344,22 @@
             </span>
             Facebook-Esteban Varela</a>
             </div>
-            
+            </div>
         </footer>
 <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
 <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
-
+<script type="text/javascript" src="../Assets/js/jquery.eislideshow.js"></script>
+        <script type="text/javascript" src="../Assets/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#ei-slider').eislideshow({
+                    animation           : 'center',
+                    autoplay            : true,
+                    slideshow_interval  : 3000,
+                    titlesFactor        : 0
+                });
+            });
+        </script>
 </body>
 
 </html>

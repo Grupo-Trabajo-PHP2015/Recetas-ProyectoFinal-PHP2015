@@ -1,9 +1,20 @@
 <?php
 
-//Esto de sessiones lo puedes quitar solo puse para una prueba
 session_start();
-$_SESSION['Nombre'] = "Esteban";
-$_SESSION['Cedula'] = 1214722046;
+
+if (empty($_SESSION['Usuario'])) {
+        
+        session_start();
+        session_destroy();
+        header('location: loginController.php');
+    }
+
+    if (isset($_POST['cerrar'])) {
+        
+        session_start();
+        session_destroy();
+        header('location: loginController.php');
+    }
 
 require_once '../Config/Config.php';
 require_once '../Library/DataBase.php';

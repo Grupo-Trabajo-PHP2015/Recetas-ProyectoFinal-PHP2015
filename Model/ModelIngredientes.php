@@ -8,6 +8,7 @@ class  Ingredientes {
     private $Url;
     private $Tipo_ingredientes_idTipo_ingrediente;
     private $db; 
+    private $idReceta;
     
     function __construct() {
         $this->db = DataBase::getInstance();
@@ -24,13 +25,13 @@ class  Ingredientes {
 
     public function consulta1() {
         
-        $sql =" SELECT r.Nombre, i.Nombre, x.Cantidad 
+        $sql =" SELECT r.Titulo, i.Nombre, x.Cantidad 
         FROM recetas r join recetas_has_ingredientes x 
         on r.idReceta=x.recetas_idReceta join ingredientes i
-        on x.ingredientes_idIngrediente= i.idIngrediente group by r.Nombre";
+        on x.ingredientes_idIngrediente= i.idIngrediente where r.idReceta=:idReceta";
         $sth = $this->db->prepare($sql);
-        $sth->execute();
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sth->execute(array('idReceta' =>  $this->__GET("idReceta")));
+        return $sth->fetchAll();
     }
     
     

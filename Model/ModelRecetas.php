@@ -32,9 +32,9 @@ class Recetas {
 
     public function Modificar() {
 
-        $sql = " UPDATE recetas SET Titulo = :Titulo , Descripcion = :Descripcion , Porciones = :Porciones WHERE idRecetas = :idRecetas";
+        $sql = " UPDATE recetas SET Titulo = :Titulo , Descripcion = :Descripcion , Porciones = :Porciones WHERE idReceta = :idReceta";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idRecetas' => $this->__Get('idRecetas'), ':Titulo' => $this->__Get('Titulo'), ':Porciones' => $this->__Get('Porciones'), ':Descripcion' => $this->__Get('Descripcion')));
+        $sth->execute(array(':idReceta' => $this->__Get('idReceta'), ':Titulo' => $this->__Get('Titulo'), ':Porciones' => $this->__Get('Porciones'), ':Descripcion' => $this->__Get('Descripcion')));
         return $sth;
     }
 
@@ -47,9 +47,9 @@ class Recetas {
     }
 
     public function Eliminar() {
-        $sql = " DELETE FROM recetas WHERE idRecetas = :idRecetas";
+        $sql = " DELETE FROM recetas WHERE idReceta = :idReceta";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idRecetas' => $this->__Get('idRecetas')));
+        $sth->execute(array(':idReceta' => $this->__Get('idReceta')));
         return $sth;
     }
 

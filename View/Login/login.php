@@ -2,9 +2,18 @@
 <html lang="es" >
     <head>
         <meta charset="UTF-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Fullscreen Background Image Slideshow with CSS3 - A Css-only fullscreen background image slideshow" />
+        <meta name="keywords" content="css3, css-only, fullscreen, background, slideshow, images, content" />
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+
+        <link rel="stylesheet" type="text/css" href="../Assets/css/demo2.css" />
+        <link rel="stylesheet" type="text/css" href="../Assets/css/style5.css" />
+        <script type="text/javascript" src="../Assets/js/modernizr.custom.86080.js"></script>
     </head>
     <body>
         
@@ -37,7 +46,19 @@
                     </div>
                 </nav>        
         <!-- Fin de menu horizontal -->
-        <img  id="bg" src="../Assets/img/rata.png" alt="background" >
+      
+
+
+
+      <ul class="cb-slideshow">
+            <li><span>Image 01</span><div><h3>Arroz </h3></div></li>
+            <li><span>Image 02</span><div><h3>Rollitos</h3></div></li>
+            <li><span>Image 03</span><div><h3>Postres</h3></div></li>
+            <li><span>Image 04</span><div><h3>Ensaladas</h3></div></li>
+            <li><span>Image 05</span><div><h3>Carnes </h3></div></li>
+            <li><span>Image 06</span><div><h3>Verduras</h3></div></li>
+        </ul>
+      
         
    <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

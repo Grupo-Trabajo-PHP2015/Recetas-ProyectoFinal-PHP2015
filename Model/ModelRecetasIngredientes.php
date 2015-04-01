@@ -6,6 +6,7 @@ class  RecetasIngredientes {
     private $Ingredientes_idIngrediente;
     private $Cantidad;
     private $db; 
+    private $idReceta;
     
     function __construct() {
         $this->db = DataBase::getInstance();
@@ -60,10 +61,10 @@ class  RecetasIngredientes {
 
 public function consulta1() {
         
-        $sql =" SELECT r.Nombre, i.Nombre, x.Cantidad 
+        $sql =" SELECT  i.Nombre, x.Cantidad 
         FROM recetas r join recetas_has_ingredientes x 
         on r.idReceta=x.recetas_idReceta join ingredientes i
-        on x.ingredientes_idIngrediente= i.idIngrediente group by r.Nombre";
+        on x.ingredientes_idIngrediente= i.idIngrediente whre idReceta=:idReceta";
         $sth = $this->db->prepare($sql);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);

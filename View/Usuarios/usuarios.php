@@ -136,7 +136,7 @@
                                 <label class="col-md-4 control-label" for="textinput">Rol a cambiar</label>  
                                 <div class="col-md-6">
                                     
-                                <select class="selectpicker" name="Roles_idRol">
+                                <select id="selectbasic" name="Roles_idRol">
                                     <?php echo $selecte; ?>   
                                 </select>
                                 </div>
