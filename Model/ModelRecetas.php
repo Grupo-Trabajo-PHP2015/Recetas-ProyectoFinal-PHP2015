@@ -55,15 +55,15 @@ class Recetas {
 
     function Buscar() {
 
-        $sql = 'SELECT idRecetas , Usuarios_Cedula , Porciones  , Descripcion , Clasificaciones_idClasificacion FROM recetas WHERE idRecetas = :idRecetas';
+        $sql = 'SELECT idReceta ,Titulo , Porciones  , Descripcion  FROM recetas WHERE idReceta = :idReceta';
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idRecetas' => $this->__GET("idRecetas")));
+        $sth->execute(array(':idReceta' => $this->__GET("idReceta")));
         return $sth->fetchAll();
     }
 
-    public function consulta1() {
+    public function Mostrar() {
 
-        $sql = " SELECT u.Nombre, r.Titulo, r.Porciones, r.Descripcion, r.Fecha_publicacion, c.Clasificacion FROM recetas r join usuarios u 
+        $sql = " SELECT u.Nombre, r.idReceta ,r.Titulo, r.Porciones, r.Descripcion, r.Fecha_publicacion, c.Clasificacion FROM recetas r join usuarios u 
         on r.Usuarios_Cedula=u.Cedula join clasificaciones c 
         on r.Clasificaciones_idClasificacion=c.idClasificacion";
         $sth = $this->db->prepare($sql);
