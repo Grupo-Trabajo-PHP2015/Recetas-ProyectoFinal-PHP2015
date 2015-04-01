@@ -60,6 +60,63 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', end
 color: white;
 }
 
-.container{
-    margin-top: 100px;
+.row {
+
+background: #e2e2e2; /* Old browsers */
+background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #fefefe 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#fefefe 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#fefefe 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e2e2e2 0%,#dbdbdb 50%,#fefefe 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+
 }
+.cuadro_intro_hover{
+        padding: 0px;
+        margin-left: 20px;
+        position: relative;
+        overflow: hidden;
+        height: 210px;
+        margin-top: 20px;
+        -webkit-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75);
+    }
+    .cuadro_intro_hover:hover .caption{
+        opacity: 1;
+        transform: translateY(-150px);
+        -webkit-transform:translateY(-150px);
+        -moz-transform:translateY(-150px);
+        -ms-transform:translateY(-150px);
+        -o-transform:translateY(-150px);
+    }
+    .cuadro_intro_hover img{
+        z-index: 4;
+    }
+    .cuadro_intro_hover .caption{
+        position: absolute;
+        top:150px;
+        -webkit-transition:all 0.3s ease-in-out;
+        -moz-transition:all 0.3s ease-in-out;
+        -o-transition:all 0.3s ease-in-out;
+        -ms-transition:all 0.3s ease-in-out;
+        transition:all 0.3s ease-in-out;
+        width: 100%;
+    }
+    .cuadro_intro_hover .blur{
+        background-color: rgba(0,0,0,0.7);
+        height: 300px;
+        z-index: 5;
+        position: absolute;
+        width: 100%;
+    }
+    .cuadro_intro_hover .caption-text{
+        z-index: 10;
+        color: #fff;
+        position: absolute;
+        height: 300px;
+        text-align: center;
+        top:-20px;
+        width: 100%;
+    }

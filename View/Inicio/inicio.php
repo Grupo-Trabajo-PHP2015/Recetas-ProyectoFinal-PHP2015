@@ -10,7 +10,8 @@
     <title>Inicio</title>
 
     <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+    <link href="../Assets/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
@@ -65,7 +66,18 @@
 	<br>
 	<br>
 	  <h1>Bienvenido Querido <?php echo $_SESSION['Rol']; ?></h1>
-	 
+	 <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
 	</div>
 
 
@@ -159,6 +171,106 @@
     </div>
 </div>
 
+
+<hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="col-lg-3 col-md-6">
+                <div class="container">
+    
+   
+        <div class="col-lg-3">
+                    <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                        <img src="../Assets/img/Esteban.jpg" class="img-responsive img-thumbnail" alt="">
+                        
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="caption-text">
+                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px; font-size:20px;">Esteban Varela</h3>
+                                <p>Tecnologo en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                <a class=" btn btn-default" href="https://plus.google.com/u/0/107465545975757511169/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                            </div>
+                        </div>
+                    </div>
+                
+        </div>
+       <div class="col-lg-3">
+                    <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                        
+                            <img src="../Assets/img/Tatiana.jpg" class="img-responsive img-thumbnail" alt="">
+                        
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="caption-text">
+                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px; font-size:20px;">Tatiana Betancur</h3>
+                                <p>Tecnologa en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                <a class=" btn btn-default" href="https://plus.google.com/u/0/100599910164672027111/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                            </div>
+                        </div>
+                    </div>
+                
+        </div>
+            
+
+            <div class="col-lg-3 col-md-6">
+            <h3>Siguenos en:</h3>
+            <a href="https://twitter.com/JULIETH_BM" id="gh" target="_blank" title="Twitter"><span class="">
+             <i class="fa fa-twitter "></i>
+            </span>
+            Twitter-Tatiana Betancur</a>
+                        <br>
+            <a href="https://twitter.com/teban17229" id="gh" target="_blank" title="Twitter"><span class="">
+              <i class="fa fa-twitter"></i>
+            </span>
+            Twitter-Esteban Varela</a>
+            <br>
+            <a href="https://github.com/TatianaBM"  target="_blank" title="GitHub"><span class="">
+            <i class="fa fa-github"></i>
+            </span>
+            GitHub-Tatiana Betancur</a>
+            <br>
+            <a href="https://github.com/esteban18plus"  target="_blank" title="GitHub"><span class="">
+            <i class="fa fa-github"></i>
+            </span>
+            GitHub-Esteban Varela</a>
+             <div id="fb-root"></div>
+<br>
+<div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script> 
+    <br>
+     <p>Copyright © 2015 | <a href="">ADSI</a></p>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h3>Contactenos:</h3>
+                <p>¿Tiene alguna pregunta o comentario ? Ponte en contacto con nosotros!</p>
+            <h3>Contactanos en Facebook:</h3>
+            <a href="https://www.facebook.com/yulieth.bethancurt"  target="_blank" title="GitHub"><span class="">
+            <i class="fa fa-facebook"></i>
+            </span>
+            Facebook-Tatiana Betancur</a>
+            <br>
+            <a href="https://www.facebook.com/pepascondones"  target="_blank" title="GitHub"><span class="">
+              <i class="fa fa-facebook"></i>
+            </span>
+            Facebook-Esteban Varela</a>
+            </div>
+            
+        </footer>
 <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
 <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
 

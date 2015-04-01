@@ -5,7 +5,7 @@
 
         <title>Recetas</title>
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
-
+    
     </head>
     <body>
         <div class="container">
