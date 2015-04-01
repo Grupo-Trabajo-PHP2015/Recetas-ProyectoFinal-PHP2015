@@ -80,21 +80,25 @@ if (isset($_POST['editar'])) {
         $mensaje = "Error en la conexión";
         print "<script>alert('$mensaje')</script>";
     }
-}elseif (isset ($_POST['receta']) ) {
+}elseif (isset ($_POST['nombre']) ) {
+    
+    $resultado="";
     
     $modelMostrar = new Recetas();
     
-    $modelMostrar->__SET('idReceta',$_POST['receta']);
+    $nombreReceta= addslashes(htmlspecialchars($_POST['nombre']));
     
-    if ( $modelMostrar->MostrarIngrediente()>0 ) {
+    $modelMostrar->__SET('idReceta',$nombreReceta);
+    
+    if ( $modelMostrar->MostrarIngrediente() ) {
         
-        $mensaje['Mensaje'] = "Se mostrara satisfactoriamente";
+        $resultado = "Se mostrara satisfactoriamente";
     }  else {
         
-        $mensaje['Mensaje'] = "Error conexion";
+        $resultado ="Error conexion";
     }
     
-     echo json_decode($mensaje);
+     
     
 }
 
@@ -103,7 +107,6 @@ $tabla = "";
 foreach ($model->Mostrar()as $value) {
 
     $tabla .="<tr>";
-
     $tabla .="<td>" . $value['Titulo'] . "</td>";
     $tabla .="<td>" . $value['Descripcion'] . "</td>";
     $tabla .="<td>" . $value['Porciones'] . "</td>";
@@ -111,7 +114,7 @@ foreach ($model->Mostrar()as $value) {
     $tabla .="<td>" . $value['Clasificacion'] . "</td>";
     $tabla .="<td>" . $value['Nombre'] . "</td>";
     $tabla .="<td> <a href='recetasController.php?id=" . $value['idReceta'] . "' class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
-    $tabla .="<td> <button data-toggle='modal' data-target='#ver' id='prueba' class='btn btn-danger btn-xs' data-id='".$value['idReceta']."' type='button'>  <span class='glyphicon glyphicon-eye-open'></span> </button> </td>";
+    $tabla .="<td> <form id='formulario' method='POST' > <input type='hidden' name='nombre' value='".$value['idReceta']."' >  <button  name='btn-enviar' id='btn-enviar' class='btn btn-danger btn-xs' type='button'>  <span class='glyphicon glyphicon-eye-open'></span> </button> </form>  </td>";
     $tabla .="</tr>";
 }
 

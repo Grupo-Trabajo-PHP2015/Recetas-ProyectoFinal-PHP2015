@@ -50,8 +50,8 @@ if (isset($_POST["session"])) {
                                 <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
                                 <li><a href='recetasController.php'>Ver todas las recetas</a></li>
                                 <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
-                                <li><a href='recetasController.php'>Ver ingredientes disponibles</a></li>
-                                <li><a href='nuevasRecetaController.php'>Clasificaciones disponibles</a></li>
+                                <li><a href='ingredientesController.php'>Ver ingredientes disponibles</a></li>
+                                <li><a href='clasificacionController.php'>Clasificaciones disponibles</a></li>
                             </ul>
             
                             "

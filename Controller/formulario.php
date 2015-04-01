@@ -1,58 +1,66 @@
 <?php
-session_start();
 
-if (empty($_SESSION['Usuario'])) {
-        
-        session_start();
-        session_destroy();
-        header('location: loginController.php');
-    }
-
-    if (isset($_POST['cerrar'])) {
-        
-        session_start();
-        session_destroy();
-        header('location: loginController.php');
-    }
-    
 require_once '../Config/Config.php';
 require_once '../Library/DataBase.php';
-require_once '../Model/ModelRecetasIngredientes.php';
+require_once '../Model/ModelRecetas.php';
 
+$resultado="";
+    
+    $modelMostrar = new Recetas();
+    
+    
+   $nombreReceta= addslashes(htmlspecialchars($_POST['nombre']));
+    
+    $modelMostrar->__SET('idReceta',$nombreReceta);
+    
+    if ( $modelMostrar->MostrarIngrediente() ) {
+        
+        $resultado .= '<div class="row">';
+        $resultado .= '<div class="table-responsive">';
+        $resultado .= '<div class="col-md-6">';
+        $resultado .= '<table border="1" class="table table-bordred table-striped" style="text-align: center" >';
+        
+        $resultado .= '<thead>';
+            $resultado .= '<tr>';
+            
+            $resultado .= '<th>';
+                $resultado .= 'Ingrediente';
+            $resultado .= '</th>';
+            
+            $resultado .= '<th>';
+                $resultado .= 'Cantidad';
+            $resultado .= '</th>';
+            
+            $resultado .= '</tr>';
 
-    foreach ($_POST as $nombre_campo => $valor) {
-
-        if ($_POST[$nombre_campo] == $_POST["titulo"] ||
-                $_POST[$nombre_campo] == $_POST["descripcion"] ||
-                $_POST[$nombre_campo] == $_POST["clasificacion"] ||
-                $_POST[$nombre_campo] == $_POST["porciones"] ||
-                $_POST[$nombre_campo] == $_POST["descripcion"] ||
-                $_POST[$nombre_campo] == $_POST["autor"] ||
-                $_POST[$nombre_campo] == $_POST["idUsuario"] ||
-                $_POST[$nombre_campo] == $_POST["ListaIngrediente"]
-        ) {
+        $resultado .= '</thead>';
+        
+        $resultado .= '</tbody>';
+        foreach (  $modelMostrar->MostrarIngrediente() as $value  ){
+            $resultado .="<tr>";
             
-        } elseif ($_POST[$nombre_campo] != $_POST['guardar']) {
+            $resultado .="<td>";
+            $resultado .=$value['Nombre'];
+            $resultado .="</td>";
             
-            $ID_ing = $nombre_campo;
-            $cantidad = $valor;
+            $resultado .="<td>";
+            $resultado .=$value['Cantidad'];
+            $resultado .="</td>";
             
-            $model_R_I = new RecetasIngredientes();
-            
-            $model_R_I->__SET('Recetas_idReceta',1);
-            $model_R_I->__SET('Ingredientes_idIngrediente',$ID_ing);
-            $model_R_I->__SET('Cantidad',$cantidad);
-            if ( $model_R_I->Guardar() ) {
-                
-                echo '<script>console.log("Guardado satisfactoriamente")</script>';
-     
-                
-            }  else {
-             
-                echo '<script>console.log("Fallo en la conexión")</script>';
-            }
+            $resultado .="</tr>";
         }
-    }    
+        
+        $resultado .= '</tbody>';
+        
+        $resultado .= '</table>';
+         $resultado .= '</div>';
+        $resultado .= '</div>';
+        $resultado .= '</div>';
+    }  else {
+        
+        $resultado ="Error conexion";
+    }
 
+    echo $resultado;
 
 ?>

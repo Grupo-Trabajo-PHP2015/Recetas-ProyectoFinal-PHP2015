@@ -15,7 +15,22 @@
                         <h1 id="titulo" >Recetas</h1>
                     </center>
                 </div>
+<form method="POST" id="formulario">
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td>  <input name="nombre" type="text" > </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <button type="button" id="btn-enviar" >Enviar</button> </td>
+                </tr>
+            </table>
+        </form>
+    </center>
 
+    <div id="resultado">
+                
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -89,8 +104,6 @@
             <div class="row">
                 <div class="table-responsive">
                     <div class="col-md-6">
-                        <button  id='va' class='btn btn-danger'  type='button'> Ver</button>
-                        <input type="hidden" value="1" name="receta" id="receta" >
                         <table border="1" class="table table-bordred table-striped" style="text-align: center" >
                             <thead>
                                 <tr>
@@ -143,35 +156,24 @@
         <script type="text/javascript" src="../Assets/js/jquery-ui.min.js" ></script>
         <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
         <script type="text/javascript"  >  
-        
-        $(document).on('ready', function () {
-         
-            alert('Hola');
-         
-         $('#va').click(function(){
-            
-             var prueba = "";
-            prueba += "<a>ver</a>";
-             $('#titulo').after(prueba);
-             Crear();
-         });
-         
-         function Crear(){
-             
-             $.ajax({
-            'type':'post',
-            'dataType':'json',
-            'data':{
-                'receta': $('#receta').val()
-            },
-            'url':'recetasController.php'
-        }).done(function(response){
-            alert("todo bien");
-        }).fail(function(response){
-            alert("ocurrio un error ")
+        $(function () {
+
+        $('#btn-enviar').click(function(){
+           
+           var url = "formulario.php";
+           $.ajax({
+              
+              type:"POST",
+              url:url,
+              data:$('#formulario').serialize() ,
+              success:function(data){
+                  $('#titulo').after(data);
+              }
+           });
+           return false;
         });
-         }
-            
+
+
         });   
         </script>
 
