@@ -21,12 +21,12 @@ class Recetas {
     public function __SET($atributo, $valor) {
         $this->$atributo = $valor;
     }
-    
+
     public function Guardar() {
 
         $sql = " INSERT INTO recetas  (`idReceta`, `Usuarios_Cedula`, `Titulo`, `Porciones`, `Descripcion`, `Clasificaciones_idClasificacion`) VALUES ( :idReceta , :Usuarios_Cedula , :Titulo , :Porciones , :Descripcion  ,:Clasificaciones_idClasificacion)";
         $sth = $this->db->prepare($sql);
-        $sth->execute(array(':idReceta' => $this->__Get('idReceta'), ':Usuarios_Cedula' => $this->__Get('Usuarios_Cedula'), ':Titulo' => $this->__Get('Titulo'), ':Porciones' => $this->__Get('Porciones'), ':Descripcion' => $this->__Get('Descripcion'),':Clasificaciones_idClasificacion' => $this->__Get('Clasificaciones_idClasificacion')));
+        $sth->execute(array(':idReceta' => $this->__Get('idReceta'), ':Usuarios_Cedula' => $this->__Get('Usuarios_Cedula'), ':Titulo' => $this->__Get('Titulo'), ':Porciones' => $this->__Get('Porciones'), ':Descripcion' => $this->__Get('Descripcion'), ':Clasificaciones_idClasificacion' => $this->__Get('Clasificaciones_idClasificacion')));
         return $sth;
     }
 
@@ -68,6 +68,15 @@ class Recetas {
         on r.Clasificaciones_idClasificacion=c.idClasificacion";
         $sth = $this->db->prepare($sql);
         $sth->execute();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function MostrarIngrediente() {
+        $sql = "SELECT i.Nombre, x.Cantidad FROM recetas r join recetas_has_ingredientes x 
+                ON r.idReceta=x.recetas_idReceta join ingredientes i 
+                ON x.ingredientes_idIngrediente= i.idIngrediente WHERE idReceta= :idReceta";
+        $sth = $this->db->prepare($sql);
+        $sth->execute(array(':idReceta' => $this->__GET("idReceta")));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 

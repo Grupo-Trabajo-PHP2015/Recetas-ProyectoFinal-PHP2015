@@ -53,6 +53,51 @@ if (isset($_GET["id"])) {
     }
 }
 
+if (isset($_POST['editar'])) {
+
+    $modelEdi = new Recetas();
+
+    $tittle = $_POST['titulo'];
+    $portions = $_POST['porciones'];
+    $description = $_POST['descripcion'];
+
+    $modelEdi->__SET('idReceta', $_GET['id']);
+    $modelEdi->__SET('Titulo', $tittle);
+    $modelEdi->__SET('Descripcion', $description);
+    $modelEdi->__SET('Porciones', $portions);
+
+    if ($modelEdi->Modificar()) {
+
+        $mensaje = "Edición satisfactoriamente";
+        print "<script>alert('$mensaje')</script>";
+        $id_n = "";
+        $TituloEdi = "";
+        $DescripcionEdi = "";
+        $PorcionesEdi = "";
+        $bloqueo = "";
+    } else {
+
+        $mensaje = "Error en la conexión";
+        print "<script>alert('$mensaje')</script>";
+    }
+}elseif (isset ($_POST['receta']) ) {
+    
+    $modelMostrar = new Recetas();
+    
+    $modelMostrar->__SET('idReceta',$_POST['receta']);
+    
+    if ( $modelMostrar->MostrarIngrediente()>0 ) {
+        
+        $mensaje['Mensaje'] = "Se mostrara satisfactoriamente";
+    }  else {
+        
+        $mensaje['Mensaje'] = "Error conexion";
+    }
+    
+     echo json_decode($mensaje);
+    
+}
+
 $model = new Recetas();
 $tabla = "";
 foreach ($model->Mostrar()as $value) {
@@ -65,8 +110,8 @@ foreach ($model->Mostrar()as $value) {
     $tabla .="<td>" . $value['Fecha_publicacion'] . "</td>";
     $tabla .="<td>" . $value['Clasificacion'] . "</td>";
     $tabla .="<td>" . $value['Nombre'] . "</td>";
-    $tabla .="<td> <a href='recetasController.php?id=" . $value['idReceta'] . "'  class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
-    $tabla .="<td> <a href='recetasController.php?delete=" . $value['idReceta'] . "' class='btn btn-danger btn-xs' role='button'>  <span class='glyphicon glyphicon-eye-open'></span> </a> </td>";
+    $tabla .="<td> <a href='recetasController.php?id=" . $value['idReceta'] . "' class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
+    $tabla .="<td> <button data-toggle='modal' data-target='#ver' id='prueba' class='btn btn-danger btn-xs' data-id='".$value['idReceta']."' type='button'>  <span class='glyphicon glyphicon-eye-open'></span> </button> </td>";
     $tabla .="</tr>";
 }
 

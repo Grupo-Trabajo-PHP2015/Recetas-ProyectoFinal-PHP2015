@@ -237,7 +237,7 @@
 
                     var arreglo = [];
                     arreglo[arreglo.length] = draggable.data('ingrediente');
-                    //<input type='hidden' style='text-align:center' name="+draggable.data('ingrediente')+" value="+draggable.data('id')+" class='form-control input-md' >
+            
                     var lista = "";
                     lista += "<li class='list-group-item' >" + arreglo[0] + "<div class='col-md-4'> <input type='number' style='text-align:center' id='cantidad' class='cantidad' name=" + draggable.data('id') + " min='2' max='20' value='2' class='form-control input-md' > </div>  </li>";
                     $('#imprimir').append(lista);

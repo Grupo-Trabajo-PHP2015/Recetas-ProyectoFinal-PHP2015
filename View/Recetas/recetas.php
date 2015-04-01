@@ -12,14 +12,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <center>
-                        <h1>Recetas</h1>
+                        <h1 id="titulo" >Recetas</h1>
                     </center>
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="POST" action="" >
                         <fieldset>
 
                             <!-- Form Name -->
@@ -89,6 +89,8 @@
             <div class="row">
                 <div class="table-responsive">
                     <div class="col-md-6">
+                        <button  id='va' class='btn btn-danger'  type='button'> Ver</button>
+                        <input type="hidden" value="1" name="receta" id="receta" >
                         <table border="1" class="table table-bordred table-striped" style="text-align: center" >
                             <thead>
                                 <tr>
@@ -112,12 +114,66 @@
                 </div>
             </div>
            
+             <!-- Modal2 -->
+    <div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"  style="text-align: center" > ingredientes de receta </h4>
+                </div>
+                <div class="modal-body" id="bodyModal" >
+      
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
         </div>
 
         <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
+        <script type="text/javascript" src="../Assets/js/jquery-ui.js" ></script>
+        <script type="text/javascript" src="../Assets/js/jquery-ui.min.js" ></script>
         <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
+        <script type="text/javascript"  >  
+        
+        $(document).on('ready', function () {
+         
+            alert('Hola');
+         
+         $('#va').click(function(){
+            
+             var prueba = "";
+            prueba += "<a>ver</a>";
+             $('#titulo').after(prueba);
+             Crear();
+         });
+         
+         function Crear(){
+             
+             $.ajax({
+            'type':'post',
+            'dataType':'json',
+            'data':{
+                'receta': $('#receta').val()
+            },
+            'url':'recetasController.php'
+        }).done(function(response){
+            alert("todo bien");
+        }).fail(function(response){
+            alert("ocurrio un error ")
+        });
+         }
+            
+        });   
+        </script>
 
     </body>
 </html>
