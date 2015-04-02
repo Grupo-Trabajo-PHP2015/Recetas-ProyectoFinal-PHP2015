@@ -1,9 +1,8 @@
 <?php 
 
-
-        require_once '../Config/Config.php';
-        require_once '../Library/DataBase.php';
-        require_once '../Model/UsuariosModel.php';
+require_once '../Config/Config.php';
+require_once '../Library/DataBase.php';
+require_once '../Model/UsuariosModel.php';
 
 function consultar() {
     $Usuario = $_POST['Usuario'];
@@ -20,45 +19,40 @@ if (isset($_POST["session"])) {
         $Modulo = array(
             array( 
                "Url"=>"<ul class='nav navbar-nav'>
-                                <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
-                                <li class='dropdown'>
-                                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Ingredientes <span class='caret'></span></a>
-                                    <ul class='dropdown-menu' role='menu'>
-                                            <li><a href='ingredientesController.php'>Gestionar ingredientes</a></li>
-                                            <li><a href='tipoController.php'>Tipos de ingredientes</a></li>
-                                            <li class='divider'></li>
-                                    </ul>
-                                </li>
-                                <li class='dropdown'>
-                                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Recetas <span class='caret'></span></a>
-                                    <ul class='dropdown-menu' role='menu'>
-                                            <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
-                                            <li><a href='recetasController.php'>Ver todas las recetas</a></li>
-                                            <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
-                                            <li class='divider'></li>
-                                    </ul>
-                                </li>
-                                <li><a href='ClasificacionController.php'>Clasificacion</a></li>
-                                <li><a href='usuariosController.php'>Usuarios</a></li>
-                        </ul>
-            
-                            "
+                            <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
+                            <li class='dropdown'>
+                            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Ingredientes <span class='caret'></span></a>
+                                <ul class='dropdown-menu' role='menu'>
+                                    <li><a href='ingredientesController.php'>Gestionar ingredientes</a></li>
+                                    <li><a href='tipoController.php'>Tipos de ingredientes</a></li>
+                                    <li class='divider'></li>
+                                </ul>
+                            </li>
+                            <li class='dropdown'>
+                            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Recetas <span class='caret'></span></a>
+                                <ul class='dropdown-menu' role='menu'>
+                                    <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
+                                    <li><a href='recetasController.php'>Ver todas las recetas</a></li>
+                                    <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
+                                    <li class='divider'></li>
+                                </ul>
+                            </li>
+                            <li><a href='ClasificacionController.php'>Clasificacion</a></li>
+                            <li><a href='usuariosController.php'>Usuarios</a></li>
+                        </ul>"
             ),
             array(
                 "Url"=>"<ul class='nav navbar-nav'>
-                                <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
-                                <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
-                                <li><a href='recetasController.php'>Ver todas las recetas</a></li>
-                                <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
-                                <li><a href='ingredientesController.php'>Ver ingredientes disponibles</a></li>
-                                <li><a href='clasificacionController.php'>Clasificaciones disponibles</a></li>
-                            </ul>
-            
-                            "
-                        
-            ),
-    
-        );
+                            <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
+                            <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
+                            <li><a href='recetasController.php'>Ver todas las recetas</a></li>
+                            <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
+                            <li><a href='ingredientes2Controller.php'>Ver ingredientes disponibles</a></li>
+                            <li><a href='clasificacion2Controller.php'>Clasificaciones disponibles</a></li>
+                        </ul>
+                        "
+                ),
+            );
 
         foreach ( $mostrar as $value ){ 
             if ( $value['Usuario'] == $_POST['Usuario'] && $value['Password']== $_POST['Password'] ) {
@@ -86,14 +80,11 @@ if (isset($_POST["session"])) {
             $mensaje = "Hola usuario ".$_SESSION['usuario'];
             print "<script>alert('$mensaje')</script>";
             header("location: inicioController.php");
-            
-        }  else {
+            }  else {
             
             $mensaje = "el usuario no existe";
             print "<script>alert('$mensaje')</script>";
         }
-        
-  
     } 
 }        
 
@@ -122,7 +113,7 @@ function create()
     $mensaje = "Registro satisfactorio";
     print "<script>alert('$mensaje')</script>";
 
-}elseif ($_POST['Cedula']=$Cedula) {
+}elseif ($_POST['Cedula']=='Cedula') {
     print "<script>alert('Identificacion ya existe')</script>";
 
 }else{
