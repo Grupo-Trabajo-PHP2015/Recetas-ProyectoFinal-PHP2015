@@ -8,6 +8,9 @@
         <meta name="description" content="Fullscreen Background Image Slideshow with CSS3 - A Css-only fullscreen background image slideshow" />
         <meta name="keywords" content="css3, css-only, fullscreen, background, slideshow, images, content" />
         <title>Login</title>
+        
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
+        
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
 

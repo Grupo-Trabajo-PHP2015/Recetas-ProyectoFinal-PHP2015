@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
 
         <title>Clasificacion</title>
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
     </head>

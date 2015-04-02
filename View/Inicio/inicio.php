@@ -17,6 +17,7 @@
         <noscript>
             <link rel="stylesheet" type="text/css" href="../Assets/css/noscript.css" />
         </noscript>
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
     <title>Inicio</title>
 
     <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">

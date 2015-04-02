@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" >
         <title>Recetas-Ingredientes</title>
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
     </head>
     <body>

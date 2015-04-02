@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" >
         <title>NuevasRecetas</title>
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/fonts/style.css">
         <style type="text/css">
@@ -78,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <form role="form" action="prueba.php" method="POST">
+            <form role="form" action="" method="POST">
                 <div class="row setup-content" id="step-1">
                     <div class="col-xs-12">
                         <div class="col-md-12">
