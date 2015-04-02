@@ -9,6 +9,9 @@
 #encabezado{
     margin-top: 100px;
 }
+#container{
+    margin-top: 100px;
+}
 #tablau{
     margin-top: 50px;
     border: 2px solid black;
@@ -16,6 +19,11 @@
     height: auto;
     margin-left: 200px;
     padding-left: 20px;
+}
+#menu_navegar{
+    -webkit-box-shadow: 7px 7px 14px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    7px 7px 14px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         7px 7px 14px 0px rgba(50, 50, 50, 0.75);
 }
 .btn-primary{
 

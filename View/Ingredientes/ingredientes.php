@@ -5,59 +5,49 @@
         <title>Ingredientes</title>
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+            <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
     </head>
     <body>
+        <!-- Menu de navegacion horizontal -->
+        <nav id="menu_navegar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
 
-
-      <!-- Menu de navegacion horizontal -->
-                <nav id="menu_navegar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <div class="container-fluid">
-
-                    <!-- Integracion dispositivos moviles-->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <?php echo $_SESSION["menu"];?>
-
-                            
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href='#'><span class='glyphicon glyphicon-user'></span> <?php echo $_SESSION["Nombre"];?></a></li>
-                                <li><a href="#"><span class="fa fa-bell"></span></a></li>
-                                <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a data-toggle="modal" data-target="#myModal2">Perfil</a></li>
-                                        <li><a href="perfilController.php">Cuenta</a></li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <form method="POST"action='<?php echo $_SERVER['PHP_SELF']; ?>' >
-                                                  <input type="hidden" name="cerrar">
-
-                                                  <button class="button1" type="submit"><span class='glyphicon glyphicon-off'></span> Cerrar sessi&oacute;n</button>
-                                              </form>
-                                        </li>
-                                    </ul>
+                <!-- Integracion dispositivos moviles-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                    <?php echo $_SESSION["menu"];?>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href='#'><span class='glyphicon glyphicon-user'></span> <?php echo $_SESSION["Nombre"];?></a></li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a data-toggle="modal" data-target="#myModal2">Perfil</a></li>
+                                <li><a href="perfilController.php">Cuenta</a></li>
+                                <li class="divider"></li>
+                                <li>
+                                    <form method="POST"action='<?php echo $_SERVER['PHP_SELF']; ?>' >
+                                        <input type="hidden" name="cerrar">
+                                        <button class="button1" type="submit"><span class='glyphicon glyphicon-off'></span> Cerrar sessi&oacute;n</button>
+                                    </form>
                                 </li>
                             </ul>
-                        </div>
+                        </li>
+                    </ul>
+                </div>
 
-                    </div>
-                </nav>        
+            </div>
+        </nav>        
         <!-- Fin de menu horizontal -->
 
-        <br>
-        <br>
-        <br>
-        <div class="container">
+        <div id="container" class="container">
             <div class="row">
                 <div class="col-md-9">
                     <center>
@@ -74,18 +64,9 @@
                             <legend style="text-align: center" >Editar ingredientes</legend>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">ID:</label>  
+                                <label class="col-md-4 control-label" for="textinput">Identificación:</label>  
                                 <div class="col-md-6">
                                     <input id="textinput" name="id"   type="text"  placeholder="Nombre ingrediente" class="form-control input-md" <?php echo $bloqueo ?> value=" <?php echo $id_n; ?> " >
-
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
-                                <div class="col-md-6">
-                                    <input id="textinput" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
 
                                 </div>
                             </div>
@@ -95,6 +76,15 @@
                                 <label class="col-md-4 control-label" for="textinput">Descripción:</label>  
                                 <div class="col-md-6">
                                     <input id="textinput" name="descripcion2" type="text" placeholder="Caracteristicas del producto" class="form-control input-md"  value=" <?php echo $descripcion2; ?> " >
+
+                                </div>
+                            </div>
+                            
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
+                                <div class="col-md-6">
+                                    <input id="textinput" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
 
                                 </div>
                             </div>
@@ -136,7 +126,7 @@
             <div class="row">
                 <div class="table-responsive">
                     <div class="col-md-12">
-                        <table border="1" class="table table-bordred table-striped" style="text-align: center" >
+                        <table id="example" border="1" class="table table-bordred table-striped" style="text-align: center" >
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -321,6 +311,13 @@
 
             <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
             <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
+            <script src="../Assets/js/jquery.dataTables.js"></script>
+    <script class="init">
 
+$(document).ready(function() {
+ $('#example').dataTable();
+
+} );
+ </script>
     </body>
 </html>

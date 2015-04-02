@@ -7,11 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<<<<<<< HEAD
+
     <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview" />
     <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
     <meta name="author" content="Codrops" />
-=======
+
         <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview" />
         <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
         <meta name="author" content="Codrops" />
@@ -23,8 +23,9 @@
             <link rel="stylesheet" type="text/css" href="../Assets/css/noscript.css" />
         </noscript>
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
->>>>>>> origin/master
+
     <title>Inicio</title>
+    <link rel="shortcut icon" href="../Assets/img/restaurant.png">
     <link rel="shortcut icon" href="../favicon.ico"> 
     <link rel="stylesheet" type="text/css" href="../Assets/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="../Assets/css/style2.css" />
@@ -52,7 +53,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
                     <?php echo $_SESSION["menu"];?>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href='#'><span class='glyphicon glyphicon-user'></span> <?php echo $_SESSION["Nombre"];?></a></li>
