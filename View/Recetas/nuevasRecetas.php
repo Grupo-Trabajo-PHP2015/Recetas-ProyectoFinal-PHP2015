@@ -2,6 +2,7 @@
 <html lang="es" >
     <head>
         <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>NuevasRecetas</title>
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
@@ -88,7 +89,7 @@
                             <table  cellspacing="20" >
                                 <tr>
                                     <td>  <label class="col-md-4 control-label" >Titulo:</label> </td>
-                                    <td>  <input name="titulo" type="text" placeholder="Nombre de su receta" class="form-control input-md" > </td>
+                                    <td>  <input name="titulo" type="text" placeholder="Nombre de su receta" class="form-control input-md" required="required" > </td>
                                 </tr>
                                 <tr>
                                     <td> <hr> </td>
@@ -96,29 +97,18 @@
                                 </tr>
                                 <tr>
                                     <td>  <label  class="col-md-4 control-label" >Descripción:</label> </td>
-                                    <td>  <textarea name="descripcion" placeholder="Paso a paso receta" class="form-control input-md" rows="4" cols="50" ></textarea> </td>
+                                    <td>  <textarea name="descripcion" placeholder="Paso a paso receta" required="required" class="form-control input-md" rows="4" cols="50" ></textarea> </td>
                                 </tr>
                                 <tr>
                                     <td> <hr> </td>
                                     <td> <hr> </td>
                                 </tr>
-                                <tr>
-                                    <td> <label class="col-md-4 control-label" for="filebutton">Imagen:</label> </td>
-                                    <td>  
-                                        <div class="col-md-4">
-                                            <input  class="input-file" type="file" name="archivo" >
-                                        </div> 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> <hr> </td>
-                                    <td> <hr> </td>
-                                </tr>
+                               
                                 <tr>
                                     <td> <label class="col-md-4 control-label" for="selectbasic">Clasificación</label> </td>
                                     <td>   
                                         <div class="col-md-6">
-                                            <select id="selectbasic" name="clasificacion" class="form-control">
+                                            <select id="selectbasic" name="clasificacion" class="form-control"  required="required">
 
                                                 <?php echo $select; ?>
 
@@ -132,7 +122,7 @@
                                 </tr>
                                 <tr>
                                     <td>  <label class="col-md-3 control-label" >Porciones:</label> </td>
-                                    <td>  <input name="porciones" type="number" min="2" max="20" value="2" class="form-control input-md" > </td>
+                                    <td>  <input name="porciones" type="number" min="2" max="20" value="2" class="form-control input-md" required="required" > </td>
                                 </tr>
                                 <tr>
                                     <td> <hr> </td>
