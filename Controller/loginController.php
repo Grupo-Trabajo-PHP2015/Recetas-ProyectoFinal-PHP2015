@@ -229,8 +229,8 @@ if (isset($_POST["action"])) {
     }
 }
 } catch(PDOException $e){
-
-   die("Error el documento ya existe en la base de datos (Verifique su conexion esta puede ser otra causa del error) <a href='loginController.php'>Volver</a>");
+    echo '<script>alert("error documento")</script>'; 
+   //die("Error el documento ya existe en la base de datos (Verifique su conexion esta puede ser otra causa del error) <a href='loginController.php'>Volver</a>");
 }      
        include_once '../View/Login/login.php';
 ?>
