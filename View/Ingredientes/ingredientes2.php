@@ -69,7 +69,7 @@
           <div class="hero">
             <hgroup>
                 <h1>INGREDIENTES</h1>        
-                <h3>Gestiona tus ingredientes</h3>
+                <h3>Observa ingredientes disponibles</h3>
             </hgroup>
           </div>
         </div>
@@ -78,9 +78,9 @@
           <div class="hero">        
             <hgroup>
                 <h1>REGISTRA</h1>        
-                <h3>Agrega el ingrediente que desees</h3>
+                <h3>Agrega el ingrediente a la receta que desees</h3>
             </hgroup>       
-            <button class="btn btn-hero btn-lg" role="button" data-toggle="modal" data-target="#nuevo">Agregar nuevos ingredientes</button>
+            <button class="btn btn-hero btn-lg" role="button" data-toggle="modal" data-target="#nuevo">Utiliza los ingredientes</button>
           </div>
         </div>
         <div class="item slides">
@@ -96,85 +96,7 @@
       </div> 
             </div>
         <div id="container" class="container">
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <form class="form-horizontal"  method="POST" action="" enctype="multipart/form-data" >
-                        <fieldset>
-
-                            <!-- Form Name -->
-                            <hr>
-                            <h2 style="text-align: center" >Editar ingredientes</h2>
-                            <hr>
-
-                            <div class="form-group">
-                                <label text-aling=left class="col-md-1 control-label" for="textinput">Identificación:</label>  
-                                <div class="col-md-6">
-                                    <input id="textinput1" name="id"   type="text"  placeholder="Nombre ingrediente" class="form-control input-md" <?php echo $bloqueo ?> value=" <?php echo $id_n; ?> " >
-
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label text-aling=left class="col-md-1 control-label " for="textinput">Descripción:</label>  
-                                <div class="col-md-6">
-                                    <input id="textinput1" name="descripcion2" type="text" placeholder="Caracteristicas del producto" class="form-control input-md"  value=" <?php echo $descripcion2; ?> " >
-
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label text-aling=left class="col-md-1 control-label" for="textinput">Nombre:</label>  
-                                <div class="col-md-6">
-                                    <input id="textinput1" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
-
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label text-aling=left class="col-md-1 control-label" for="textinput">URL:</label>  
-                                <div class="col-md-6">
-                                    <input id="textinput1" name="url"  <?php echo $bloqueo ?> type="text" placeholder="Dirección imagen" class="form-control input-md"  value=" <?php echo $url; ?> " >
-
-                                </div>
-                            </div>
-
-
-                            <!-- Button -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="editar"></label>
-                                <div class="col-md-4">
-                                    <button id="editar" type="submit" name="editar" class="btn btn-success">Editar</button>
-                                </div>
-                            </div>
-
-                        </fieldset>
-                    </form>
-
-                </div>
-
-
-                <div class="col-md-6">
-
-                <div class="carousel-inner">
-                    <div class="item active"> <img src="../Assets/img/7.jpg" style="width:100%" data-src="holder.js/900x500/auto/#7cbf00:#fff/text: " alt="First slide">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <center>
-                                    <!-- Button trigger modal -->
-                                    <a  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#nuevo"   >
-                                        Agregar nuevos ingredientes
-                                    </a>
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>	
-            </div>
-            <hr>
+          
             <div class="row">
                 <div class="table-responsive">
                     <div class="col-md-12">
@@ -184,9 +106,6 @@
                                     <th>Nombre</th>
                                     <th>Imagen</th>
                                     <th>Descripción</th>
-                                    <th>URL</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -200,78 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-
-                <!-- Modal -->
-                <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Nuevos ingredientes</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form class="form-horizontal"  method="POST" action="" enctype="multipart/form-data" >
-                                    <fieldset>
-
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
-                                            <div class="col-md-6">
-                                                <input id="textinput" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" autofocus="" value=" " >
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Textarea -->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="textarea">Descripción:</label>
-                                            <div class="col-md-4">                     
-                                                <textarea class="form-control" id="textarea" name="descripcion"  placeholder="Caracteristicas del ingrediente o producto" rows="4" cols="150" > </textarea>
-                                            </div>
-                                        </div>
-
-                                        <!-- File Button --> 
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="filebutton">Insertar imagen:</label>
-                                            <div class="col-md-4">
-                                                <input  class="input-file" type="file" name="archivo" >
-                                            </div>
-                                        </div>
-                                        <!-- Select Basic -->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="clasificacion">Tipo Ingrediente:</label>
-                                            <div class="col-md-5">
-                                                <select id="clasificacion"  name="clasificacion" class="form-control">
-                                                   
-                                                     <?php echo $select; ?>
-                                            
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <!-- Button -->
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="guardar"></label>
-                                            <div class="col-md-4">
-                                                <button id="guardar" type="submit" name="guardar" class="btn btn-primary">Guardar</button>
-                                            </div>
-                                        </div>
-
-                                    </fieldset>
-                                </form>
-
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-        </div>
+            
             
  <!-- Modal2 -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
