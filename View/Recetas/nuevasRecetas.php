@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" >
         <title>NuevasRecetas</title>
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/fonts/style.css">
         <style type="text/css">
@@ -102,13 +103,25 @@
                                     <td> <hr> </td>
                                 </tr>
                                 <tr>
+                                    <td> <label class="col-md-4 control-label" for="filebutton">Imagen:</label> </td>
+                                    <td>  
+                                        <div class="col-md-4">
+                                            <input  class="input-file" type="file" name="archivo" >
+                                        </div> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <hr> </td>
+                                    <td> <hr> </td>
+                                </tr>
+                                <tr>
                                     <td> <label class="col-md-4 control-label" for="selectbasic">Clasificación</label> </td>
                                     <td>   
                                         <div class="col-md-6">
                                             <select id="selectbasic" name="clasificacion" class="form-control">
-                                                
+
                                                 <?php echo $select; ?>
-                                                
+
                                             </select>
                                         </div> 
                                     </td>
@@ -129,7 +142,7 @@
                                     <td>  <label class="col-md-3 control-label" >Autor:</label> </td>
                                     <td>  
                                         <input name="autor" id="autor" style="text-align: center" type="text" placeholder="Nombre usuario" class="form-control input-md" value=" <?php echo $_SESSION['Nombre'] ?>  " > 
-                                        
+
                                         <input name="idUsuario" id="idUsuario" style="text-align: center" type="hidden" class="form-control input-md" value=" <?php echo $_SESSION['Cedula']; ?> " >
                                     </td>
                                 </tr>
@@ -217,15 +230,15 @@
                     helper: 'clone'
                 });
 
-                $("#autor").attr("disabled","true");
-                
+                $("#autor").attr("disabled", "true");
+
                 $('#carrito').droppable({
                     drop: EventoDrop
                 });
 
                 function  EventoDrop(evento, ui) {
                     var draggable = ui.draggable;
-                    
+
                     $("#autor").removeAttr("disabled");
                     var sabor = $('#ListaIngrediente').val();
                     var total = $('#total').text();
@@ -237,7 +250,7 @@
 
                     var arreglo = [];
                     arreglo[arreglo.length] = draggable.data('ingrediente');
-            
+
                     var lista = "";
                     lista += "<li class='list-group-item' >" + arreglo[0] + "<div class='col-md-4'> <input type='number' style='text-align:center' id='cantidad' class='cantidad' name=" + draggable.data('id') + " min='2' max='20' value='2' class='form-control input-md' > </div>  </li>";
                     $('#imprimir').append(lista);

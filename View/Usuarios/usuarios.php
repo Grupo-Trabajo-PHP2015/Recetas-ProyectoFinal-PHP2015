@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Inicio</title>
+    <link rel="shortcut icon" href="../Assets/img/restaurant.png">
     <link href="css/bootstrap-select.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">

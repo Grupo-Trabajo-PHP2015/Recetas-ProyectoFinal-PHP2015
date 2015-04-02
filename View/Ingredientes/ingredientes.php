@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" >
         <title>Ingredientes</title>
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
@@ -53,16 +54,15 @@
                 </nav>        
         <!-- Fin de menu horizontal -->
 
-
+        <br>
+        <br>
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
                     <center>
                         <h1>Ingredientes</h1>
                     </center>
-                </div>
-                <div class="col-md-3">
-                    <a href='recetasController.php' class='btn btn-info' role='button' style="margin-top: 8%" >Recetas </a>
                 </div>
             </div>
             <div class="row">

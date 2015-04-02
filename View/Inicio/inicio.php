@@ -7,9 +7,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<<<<<<< HEAD
     <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview" />
     <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
     <meta name="author" content="Codrops" />
+=======
+        <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview" />
+        <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="../Assets/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../Assets/css/style2.css" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="../Assets/css/noscript.css" />
+        </noscript>
+        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
+>>>>>>> origin/master
     <title>Inicio</title>
     <link rel="shortcut icon" href="../favicon.ico"> 
     <link rel="stylesheet" type="text/css" href="../Assets/css/demo.css" />

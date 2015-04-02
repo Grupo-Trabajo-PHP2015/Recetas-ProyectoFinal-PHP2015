@@ -62,7 +62,7 @@ if (isset($_POST['guardar'])) {
     $destino = "../Archivos/" . $_FILES["archivo"]["name"];
 
 
-    if ($_FILES["archivo"]["type"] == "image/png" || $_FILES["archivo"]["type"] == "image/jpeg" || $_FILES["archivo"]["type"] == "image/jpg") {
+    if ($_FILES["archivo"]["type"] == "image/png" || $_FILES["archivo"]["type"] == "image/jpeg" || $_FILES["archivo"]["type"] == "image/jpg" ) {
 
         $id = "";
         $model_g = new Ingredientes();

@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>Inicio</title>
-
+    <link rel="shortcut icon" href="../Assets/img/restaurant.png">
     <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
 
