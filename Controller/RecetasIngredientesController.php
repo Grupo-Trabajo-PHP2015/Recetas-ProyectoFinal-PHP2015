@@ -13,6 +13,11 @@ $resultado="";
     
     $modelMostrar->__SET('idReceta',$nombreReceta);
     
+    foreach ( $modelMostrar->Buscar() as $value ){
+        
+        $tituloreceta = $value['Titulo'];
+    }
+    
     if ( $modelMostrar->MostrarIngrediente() ) {
         
         $resultado .= '<div class="row">';
@@ -61,6 +66,5 @@ $resultado="";
         $resultado ="Error conexion";
     }
 
-    echo $resultado;
-
+    include_once '../View/Recetas/RecetasIngredientes.php';
 ?>

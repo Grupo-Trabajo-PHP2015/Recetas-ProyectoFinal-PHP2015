@@ -15,23 +15,7 @@
                         <h1 id="titulo" >Recetas</h1>
                     </center>
                 </div>
-<form method="POST" id="formulario">
-            <table>
-                <tr>
-                    <td>Nombre:</td>
-                    <td>  <input name="nombre" type="text" > </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td> <button type="button" id="btn-enviar" >Enviar</button> </td>
-                </tr>
-            </table>
-        </form>
-    </center>
 
-    <div id="resultado">
-                
-            </div>
             <div class="row">
                 <div class="col-md-6">
                     <form class="form-horizontal" method="POST" action="" >
@@ -127,26 +111,6 @@
                 </div>
             </div>
            
-             <!-- Modal2 -->
-    <div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel"  style="text-align: center" > ingredientes de receta </h4>
-                </div>
-                <div class="modal-body" id="bodyModal" >
-      
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 
         </div>
