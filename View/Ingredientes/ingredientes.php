@@ -110,7 +110,7 @@
                             <div class="form-group">
                                 <label text-aling=left class="col-md-1 control-label" for="textinput">Identificación:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="id"   type="text"  placeholder="Nombre ingrediente" class="form-control input-md" <?php echo $bloqueo ?> value=" <?php echo $id_n; ?> " >
+                                    <input id="textinput1" required name="id"   type="text"  placeholder="Nombre ingrediente" class="form-control input-md" <?php echo $bloqueo ?> value=" <?php echo $id_n; ?> " >
 
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                             <div class="form-group">
                                 <label text-aling=left class="col-md-1 control-label " for="textinput">Descripción:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="descripcion2" type="text" placeholder="Caracteristicas del producto" class="form-control input-md"  value=" <?php echo $descripcion2; ?> " >
+                                    <input id="textinput1"required  name="descripcion2" type="text" placeholder="Caracteristicas del producto" class="form-control input-md"  value=" <?php echo $descripcion2; ?> " >
 
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                             <div class="form-group">
                                 <label text-aling=left class="col-md-1 control-label" for="textinput">Nombre:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
+                                    <input id="textinput1" required name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
 
                                 </div>
                             </div>
@@ -136,7 +136,7 @@
                             <div class="form-group">
                                 <label text-aling=left class="col-md-1 control-label" for="textinput">URL:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="url"  <?php echo $bloqueo ?> type="text" placeholder="Dirección imagen" class="form-control input-md"  value=" <?php echo $url; ?> " >
+                                    <input id="textinput1" required name="url"  <?php echo $bloqueo ?> type="text" placeholder="Dirección imagen" class="form-control input-md"  value=" <?php echo $url; ?> " >
 
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="editar"></label>
                                 <div class="col-md-4">
-                                    <button id="editar" type="submit" name="editar" class="btn btn-success">Editar</button>
+                                    <button id="editar" type="submit" name="editar" class="btn btn-success">Modificar ingrediente</button>
                                 </div>
                             </div>
 
@@ -218,7 +218,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
                                             <div class="col-md-6">
-                                                <input id="textinput" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" autofocus="" value=" " >
+                                                <input id="textinput" name="nombre" type="text" required placeholder="Nombre ingrediente" class="form-control input-md" autofocus="" value=" " >
 
                                             </div>
                                         </div>
@@ -227,7 +227,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="textarea">Descripción:</label>
                                             <div class="col-md-4">                     
-                                                <textarea class="form-control" id="textarea" name="descripcion"  placeholder="Caracteristicas del ingrediente o producto" rows="4" cols="150" > </textarea>
+                                                <textarea required class="form-control" id="textarea" name="descripcion"  placeholder="Caracteristicas del ingrediente o producto" rows="4" cols="150" > </textarea>
                                             </div>
                                         </div>
 
@@ -235,14 +235,14 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="filebutton">Insertar imagen:</label>
                                             <div class="col-md-4">
-                                                <input  class="input-file" type="file" name="archivo" >
+                                                <input required class="input-file" type="file" name="archivo" >
                                             </div>
                                         </div>
                                         <!-- Select Basic -->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="clasificacion">Tipo Ingrediente:</label>
                                             <div class="col-md-5">
-                                                <select id="clasificacion"  name="clasificacion" class="form-control">
+                                                <select required id="clasificacion"  name="clasificacion" class="form-control">
                                                    
                                                      <?php echo $select; ?>
                                             
