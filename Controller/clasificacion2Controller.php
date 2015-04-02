@@ -16,6 +16,10 @@ if (empty($_SESSION['Usuario'])) {
         header('location: loginController.php');
     }
 
+    
+    
+    
+    
 require_once '../Config/Config.php';
 require_once '../Library/DataBase.php';
 require_once '../Model/ModelClasificacion.php';
