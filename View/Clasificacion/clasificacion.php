@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>Clasificacion</title>
+        <title>TipoIngrediente</title>
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
     </head>
     <body>
     <!-- Menu de navegacion horizontal -->
@@ -58,22 +59,35 @@
             <div class="row">
                 <div class="col-md-12">
                     <center>
-                        <h1>Clasificación recetas</h1>
+                        <h1>TIPOS DE CLASIFICACIONES</h1>
                     </center>
                 </div>
 
             </div>
             <div class="row">
-                <div class="col-md-6">
+            <div class="col-md-7">
+                    <div class="carousel-inner">
+                    <div class="item active"> <img src="../Assets/img/4.jpg" style="width:100%" data-src="holder.js/900x500/auto/#7cbf00:#fff/text: " alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+
                     <form class="form-horizontal"  method="POST" action="" >
                         <fieldset>
 
                             <!-- Form Name -->
-                            <legend style="text-align: center" >Editar clasificación</legend>
+                            <hr>
+                            <h2 style="text-align: left" >Editar tipo de clasificacion</h2>
+                            <hr>
 
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="titulo">ID:</label>  
+                                <label class="col-md-4 control-label" for="titulo">Identificacion:</label>  
                                 <div class="col-md-6">
                                     <input id="titulo" name="titulo" type="text" placeholder="" class="form-control input-md" value=" <?php echo $id_n;  ?>  "  <?php echo $bloqueo; ?> >
 
@@ -94,31 +108,36 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="editar"></label>
                                 <div class="col-md-4">
-                                    <button id="editar" name="editar" type="submit" class="btn btn-success" >Editar</button>
+                                    <button id="editar" name="editar" type="submit" class="btn btn-success" >Modificar</button>
                                 </div>
                             </div>
 
                         </fieldset>
                     </form>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12 col-md-offset-1">
+                            <center>
 
-                </div>
-                <div class="col-md-4">
-
-                    <center>
+                        <center>
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#nuevo"  style="margin-right: 40%;margin-top: 10%;" >
                             Agregar clasificaciones
                         </button>
                     </center>
-
-                </div>	
+                        </div>
+                    </div>
+                </div>
+                
+                </div>  
             </div>
-            <hr>
+<br>
+                    <hr>
             <div class="row">
                 <div class="table-responsive">
-                    <div class="col-md-6">
-                        <table border="1" class="table table-bordred table-striped" style="text-align: center" >
+                    <div class="col-md-10 col-md-offset-1">
+                        <table id="example" border="1" class="table table-bordred table-striped" style="text-align: center" >
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -134,8 +153,11 @@
                             </tbody>
                         </table>
                     </div>
+                    
                 </div>
             </div>
+
+            
             <div class="row">
 
                 <!-- Modal -->
@@ -144,7 +166,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Nueva clasificación</h4>
+                                <h4 class="modal-title" id="myModalLabel"  style="text-align: center" >Nuevo tipo</h4>
                             </div>
                             <div class="modal-body">
                                 <form class="form-horizontal"  method="POST" action="" >
@@ -155,7 +177,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="titulo">Nombre:</label>  
                                             <div class="col-md-6">
-                                                <input id="titulo" name="nombre" type="text" placeholder="" class="form-control input-md">
+                                                <input id="titulo" name="nombre" type="text" placeholder="" class="form-control input-md" required="" >
 
                                             </div>
                                         </div>
@@ -271,8 +293,111 @@
         </div>
     </div>
 </div>
+
+    <!-- Pie de pagina -->
+    <footer>
+        <div class="row1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="container">
+                            <div class="col-lg-3">
+                                <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                    <img src="../Assets/img/Esteban.jpg" class="img-responsive img-thumbnail" alt="">
+                                    <div class="caption">
+                                        <div class="blur"></div>
+                                        <div class="caption-text">
+                                            <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Esteban Varela</h3>
+                                            <p>Tecnologo en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                            <a class=" btn btn-default" href="https://plus.google.com/u/0/107465545975757511169/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                    <img src="../Assets/img/Tatiana.jpg" class="img-responsive img-thumbnail" alt="">
+                        
+                                    <div class="caption">
+                                        <div class="blur"></div>
+                                        <div class="caption-text">
+                                            <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Tatiana Betancur</h3>
+                                            <p>Tecnologa en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                            <a class=" btn btn-default" href="https://plus.google.com/u/0/100599910164672027111/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6">
+                                <h3>Siguenos en:</h3>
+                                <a href="https://twitter.com/JULIETH_BM" id="gh" target="_blank" title="Twitter"><span class="">
+                                 <i class="fa fa-twitter "></i>
+                                </span>
+                                Twitter-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://twitter.com/teban17229" id="gh" target="_blank" title="Twitter"><span class="">
+                                  <i class="fa fa-twitter"></i>
+                                </span>
+                                Twitter-Esteban Varela</a>
+                                <br>
+                                <a href="https://github.com/TatianaBM"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-github"></i>
+                                </span>
+                                GitHub-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://github.com/esteban18plus"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-github"></i>
+                                </span>
+                                GitHub-Esteban Varela</a>
+                                <div id="fb-root"></div>
+                                <br>
+                                <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="">Tweet</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                                <div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
+
+                                <script type="text/javascript">
+                                  (function() {
+                                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                    po.src = 'https://apis.google.com/js/platform.js';
+                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                                  })();
+                                </script> 
+                                <br>
+                                <p>Copyright © 2015 | <a href="">ADSI</a></p>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <h3>Contactenos:</h3>
+                                <p>¿Tiene alguna pregunta o comentario ? Ponte en contacto con nosotros!</p>
+                                <h3>Contactanos en Facebook:</h3>
+                                <a href="https://www.facebook.com/yulieth.bethancurt"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-facebook"></i>
+                                </span>
+                                Facebook-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://www.facebook.com/pepascondones"  target="_blank" title="GitHub"><span class="">
+                                  <i class="fa fa-facebook"></i>
+                                </span>
+                                Facebook-Esteban Varela</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+                    <!-- Fin pie de pagina -->
         <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
         <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
+        <script src="../Assets/js/jquery.dataTables.js"></script>
+    <script class="init">
 
+$(document).ready(function() {
+ $('#example').dataTable();
+
+} );
+ </script>
     </body>
 </html>
