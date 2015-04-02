@@ -9,10 +9,9 @@
 
     <title>Inicio</title>
     <link rel="shortcut icon" href="../Assets/img/restaurant.png">
-    <link href="css/bootstrap-select.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
 
 </head>
 
@@ -61,18 +60,28 @@
                 </nav>        
         <!-- Fin de menu horizontal -->
 
+<div class="container7">
+    <div class="row panel">
+        <div class="col-md-4 bg_blur ">
+        </div>
+        <div class="col-md-8  col-xs-12">
+           <img src="../Assets/img/20.jpg" class="img-thumbnail picture hidden-xs" />
+           <img src="../Assets/img/20.jpg" class="img-thumbnail visible-xs picture_mob" />
+           <div class="header">
+                <h1><?php echo $_SESSION['Nombre']; ?></h1>
+                <h4><?php echo $_SESSION['Rol']; ?> de el sistema</h4>
+                <span>Modulo para gestionar usuarios del sistema</span>
+           </div>
+        </div>
+    </div>   
 
-    <div id="encabezado">
-    <br>
-    <br>
-    <br>
-    <br>
-      <center><h1><?php echo $_SESSION['Nombre']; ?></h1></center>
-      <br>
-      <br>
-      <br>
-      <br>
-      <form class="form-horizontal"  action="" method="POST" >
+</div>
+      <div id="encabezado">
+          <div class="row">
+            
+                <div class="col-md-5">
+
+                      <form class="form-horizontal"  action="" method="POST" >
                         <fieldset>
 
                              <!-- Text input-->
@@ -83,7 +92,7 @@
 
                                 </div>
                                 <div>
-                                    <input id="textinput" style="display:none;" value="<?php echo $Cedula; ?>" name="Cedula" type="text"  class="form-control input-md"> 
+                                    <input id="textinput" required style="display:none;" value="<?php echo $Cedula; ?>" name="Cedula" type="text"  class="form-control input-md"> 
 
                                 </div>
                             </div>
@@ -92,7 +101,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput">Nombre</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="Nombre" value="<?php echo $Nombre; ?>" type="text" placeholder="" class="form-control input-md">
+                                    <input id="textinput" required name="Nombre" value="<?php echo $Nombre; ?>" type="text" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
@@ -101,7 +110,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput">Email</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="Email"  value="<?php echo $Email; ?>" type="email" placeholder="" class="form-control input-md">
+                                    <input id="textinput"required name="Email"  value="<?php echo $Email; ?>" type="email" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
@@ -110,7 +119,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput">Usuario</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="Usuario"  value="<?php echo $Usuario; ?>" type="text" placeholder="" class="form-control input-md">
+                                    <input id="textinput" required name="Usuario"  value="<?php echo $Usuario; ?>" type="text" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
@@ -119,7 +128,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput" >Password</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="Password"  value="<?php echo $Password; ?>" type="password" placeholder="" class="form-control input-md">
+                                    <input id="textinput" required name="Password"  value="<?php echo $Password; ?>" type="password" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
@@ -128,7 +137,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput">Rol Actual</label>  
                                 <div class="col-md-6">
-                                    <label id="textinput" type="text" placeholder="Usuario" class="form-control input-md"><?php echo $Rol; ?> </label> 
+                                    <label id="textinput" required type="text" placeholder="Usuario" class="form-control input-md"><?php echo $Rol; ?> </label> 
 
                                 </div>
                             </div>
@@ -148,22 +157,19 @@
                            <div class="form-group">
                                 <label class="col-md-4 control-label" for="singlebutton"></label>
                                 <div class="col-md-4">
-                                    <button id="singlebutton" type="submit" name="action"  value="Modificar" class="btn btn-success">Modificar Informacion</button>
+                                    <button id="singlebutton" type="submit" name="action"  value="Modificar" class="btn btn-danger">Modificar Informacion</button>
                                 </div>
                             </div>
                         </fieldset>
                     </form>
      
-    </div>
-
-    <center>
-    <div class="row">
-                <div id="tablau" class="table-responsive">
-
-                    <h2 ALIGN=center>Usuarios existentes </h2>
-                    <div class="col-md-12 ">
-                        <br>
-                        <table  id="example" class="table-responsive table table-bordred table-striped" >
+                    <hr>
+                    <div class="row">
+                       
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <table  id="example" class="table-responsive table table-bordred table-striped" >
                             <thead>
                                 <tr>
                                     <th>Cedula</th>
@@ -182,10 +188,10 @@
 
                             </tbody>
                         </table>
-                    </div>
                 </div>
-            </div>
-        </center>
+                </div>
+      </div>
+
 
 
  <!-- Modal2 -->
@@ -269,18 +275,111 @@
         </div>
     </div>
 </div>
+<!-- Pie de pagina -->
+    <footer>
+        <div class="row1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="container">
+                            <div class="col-lg-3">
+                                <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                    <img src="../Assets/img/Esteban.jpg" class="img-responsive img-thumbnail" alt="">
+                                    <div class="caption">
+                                        <div class="blur"></div>
+                                        <div class="caption-text">
+                                            <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Esteban Varela</h3>
+                                            <p>Tecnologo en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                            <a class=" btn btn-default" href="https://plus.google.com/u/0/107465545975757511169/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                    <img src="../Assets/img/Tatiana.jpg" class="img-responsive img-thumbnail" alt="">
+                        
+                                    <div class="caption">
+                                        <div class="blur"></div>
+                                        <div class="caption-text">
+                                            <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Tatiana Betancur</h3>
+                                            <p>Tecnologa en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                            <a class=" btn btn-default" href="https://plus.google.com/u/0/100599910164672027111/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6">
+                                <h3>Siguenos en:</h3>
+                                <a href="https://twitter.com/JULIETH_BM" id="gh" target="_blank" title="Twitter"><span class="">
+                                 <i class="fa fa-twitter "></i>
+                                </span>
+                                Twitter-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://twitter.com/teban17229" id="gh" target="_blank" title="Twitter"><span class="">
+                                  <i class="fa fa-twitter"></i>
+                                </span>
+                                Twitter-Esteban Varela</a>
+                                <br>
+                                <a href="https://github.com/TatianaBM"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-github"></i>
+                                </span>
+                                GitHub-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://github.com/esteban18plus"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-github"></i>
+                                </span>
+                                GitHub-Esteban Varela</a>
+                                <div id="fb-root"></div>
+                                <br>
+                                <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="">Tweet</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                                <div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
+
+                                <script type="text/javascript">
+                                  (function() {
+                                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                    po.src = 'https://apis.google.com/js/platform.js';
+                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                                  })();
+                                </script> 
+                                <br>
+                                <p>Copyright © 2015 | <a href="">ADSI</a></p>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <h3>Contactenos:</h3>
+                                <p>¿Tiene alguna pregunta o comentario ? Ponte en contacto con nosotros!</p>
+                                <h3>Contactanos en Facebook:</h3>
+                                <a href="https://www.facebook.com/yulieth.bethancurt"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-facebook"></i>
+                                </span>
+                                Facebook-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://www.facebook.com/pepascondones"  target="_blank" title="GitHub"><span class="">
+                                  <i class="fa fa-facebook"></i>
+                                </span>
+                                Facebook-Esteban Varela</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+                    <!-- Fin pie de pagina -->
 <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
-<script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
-<script src="../Assets/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script><script src="../Assets/js/jquery.dataTables.js"></script>
     <script class="init">
 
 $(document).ready(function() {
  $('#example').dataTable();
 
 } );
+ </script>
 
-    </script>
-       
 </body>
 
 </html>
