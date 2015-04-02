@@ -2,11 +2,14 @@
 <html lang="es" >
     <head>
         <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
         <title>Ingredientes</title>
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
-            <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
     </head>
     <body>
         <!-- Menu de navegacion horizontal -->
@@ -47,14 +50,53 @@
         </nav>        
         <!-- Fin de menu horizontal -->
 
-        <div id="container" class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <center>
-                        <h1>Ingredientes</h1>
-                    </center>
-                </div>
+      <div id="container4">
+      <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+      <!-- Overlay -->
+      <div class="overlay"></div>
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>INGREDIENTES</h1>        
+                <h3>Gestiona tus ingredientes</h3>
+            </hgroup>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">        
+            <hgroup>
+                <h1>REGISTRA</h1>        
+                <h3>Agrega el ingrediente que desees</h3>
+            </hgroup>       
+            <button class="btn btn-hero btn-lg" role="button" data-toggle="modal" data-target="#nuevo">Agregar nuevos ingredientes</button>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">        
+            <hgroup>
+                <h1>ELIMINA</h1>        
+                <h3>Elimina los ingredientes que no desees en tu menú</h3>
+            </hgroup>
+            <button class="btn btn-hero btn-lg" role="button">Eliminar</button>
+          </div>
+        </div>
+      </div> 
             </div>
+        <div id="container" class="container">
+            
             <div class="row">
                 <div class="col-md-6">
                     <form class="form-horizontal"  method="POST" action="" enctype="multipart/form-data" >
@@ -64,35 +106,35 @@
                             <legend style="text-align: center" >Editar ingredientes</legend>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Identificación:</label>  
+                                <label text-aling=left class="col-md-1 control-label" for="textinput">Identificación:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="id"   type="text"  placeholder="Nombre ingrediente" class="form-control input-md" <?php echo $bloqueo ?> value=" <?php echo $id_n; ?> " >
+                                    <input id="textinput1" name="id"   type="text"  placeholder="Nombre ingrediente" class="form-control input-md" <?php echo $bloqueo ?> value=" <?php echo $id_n; ?> " >
 
                                 </div>
                             </div>
 
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Descripción:</label>  
+                                <label text-aling=left class="col-md-1 control-label " for="textinput">Descripción:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="descripcion2" type="text" placeholder="Caracteristicas del producto" class="form-control input-md"  value=" <?php echo $descripcion2; ?> " >
+                                    <input id="textinput1" name="descripcion2" type="text" placeholder="Caracteristicas del producto" class="form-control input-md"  value=" <?php echo $descripcion2; ?> " >
 
                                 </div>
                             </div>
-                            
+
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
+                                <label text-aling=left class="col-md-1 control-label" for="textinput">Nombre:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
+                                    <input id="textinput1" name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
 
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">URL:</label>  
+                                <label text-aling=left class="col-md-1 control-label" for="textinput">URL:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput" name="url"  <?php echo $bloqueo ?> type="text" placeholder="Dirección imagen" class="form-control input-md"  value=" <?php echo $url; ?> " >
+                                    <input id="textinput1" name="url"  <?php echo $bloqueo ?> type="text" placeholder="Dirección imagen" class="form-control input-md"  value=" <?php echo $url; ?> " >
 
                                 </div>
                             </div>
@@ -110,16 +152,24 @@
                     </form>
 
                 </div>
-                <div class="col-md-4">
 
-                    <center>
 
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#nuevo"  style="margin-right: 40%;margin-top: 10%;" >
-                            Agregar nuevos ingredientes
-                        </button>
-                    </center>
+                <div class="col-md-6">
 
+                <div class="carousel-inner">
+                    <div class="item active"> <img src="../Assets/img/7.jpg" style="width:100%" data-src="holder.js/900x500/auto/#7cbf00:#fff/text: " alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <center>
+                                    <!-- Button trigger modal -->
+                                    <a  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#nuevo"   >
+                                        Agregar nuevos ingredientes
+                                    </a>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>	
             </div>
             <hr>
@@ -308,6 +358,103 @@
         </div>
     </div>
 </div>
+
+
+    <!-- Pie de pagina -->
+    <footer>
+        <div class="row1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="container">
+                            <div class="col-lg-3">
+                                <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                    <img src="../Assets/img/Esteban.jpg" class="img-responsive img-thumbnail" alt="">
+                                    <div class="caption">
+                                        <div class="blur"></div>
+                                        <div class="caption-text">
+                                            <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Esteban Varela</h3>
+                                            <p>Tecnologo en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                            <a class=" btn btn-default" href="https://plus.google.com/u/0/107465545975757511169/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                    <img src="../Assets/img/Tatiana.jpg" class="img-responsive img-thumbnail" alt="">
+                        
+                                    <div class="caption">
+                                        <div class="blur"></div>
+                                        <div class="caption-text">
+                                            <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:13px; font-size:20px;">Tatiana Betancur</h3>
+                                            <p>Tecnologa en Analisis y Desarrollo de Sistemas de Informacion...</p>
+                                            <a class=" btn btn-default" href="https://plus.google.com/u/0/100599910164672027111/posts"><span class="glyphicon glyphicon-plus"> INFORMACION</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6">
+                                <h3>Siguenos en:</h3>
+                                <a href="https://twitter.com/JULIETH_BM" id="gh" target="_blank" title="Twitter"><span class="">
+                                 <i class="fa fa-twitter "></i>
+                                </span>
+                                Twitter-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://twitter.com/teban17229" id="gh" target="_blank" title="Twitter"><span class="">
+                                  <i class="fa fa-twitter"></i>
+                                </span>
+                                Twitter-Esteban Varela</a>
+                                <br>
+                                <a href="https://github.com/TatianaBM"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-github"></i>
+                                </span>
+                                GitHub-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://github.com/esteban18plus"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-github"></i>
+                                </span>
+                                GitHub-Esteban Varela</a>
+                                <div id="fb-root"></div>
+                                <br>
+                                <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="">Tweet</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                                <div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
+
+                                <script type="text/javascript">
+                                  (function() {
+                                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                    po.src = 'https://apis.google.com/js/platform.js';
+                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                                  })();
+                                </script> 
+                                <br>
+                                <p>Copyright © 2015 | <a href="">ADSI</a></p>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <h3>Contactenos:</h3>
+                                <p>¿Tiene alguna pregunta o comentario ? Ponte en contacto con nosotros!</p>
+                                <h3>Contactanos en Facebook:</h3>
+                                <a href="https://www.facebook.com/yulieth.bethancurt"  target="_blank" title="GitHub"><span class="">
+                                <i class="fa fa-facebook"></i>
+                                </span>
+                                Facebook-Tatiana Betancur</a>
+                                <br>
+                                <a href="https://www.facebook.com/pepascondones"  target="_blank" title="GitHub"><span class="">
+                                  <i class="fa fa-facebook"></i>
+                                </span>
+                                Facebook-Esteban Varela</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+                    <!-- Fin pie de pagina -->
 
             <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
             <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>

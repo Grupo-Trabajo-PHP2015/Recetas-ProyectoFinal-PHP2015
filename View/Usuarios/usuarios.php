@@ -272,9 +272,6 @@
 <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
 <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
 <script src="../Assets/js/jquery.dataTables.js"></script>
- <script src="js/bootstrap-select.js"></script>
-        <script>$('.selectpicker').selectpicker({});</script>
-
     <script class="init">
 
 $(document).ready(function() {

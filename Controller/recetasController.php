@@ -114,7 +114,10 @@ foreach ($model->Mostrar()as $value) {
     $tabla .="<td>" . $value['Clasificacion'] . "</td>";
     $tabla .="<td>" . $value['Nombre'] . "</td>";
     $tabla .="<td> <a href='recetasController.php?id=" . $value['idReceta'] . "' class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
-    $tabla .="<td> <form id='formulario' method='POST' action='RecetasIngredientesController.php' > <input type='hidden' name='nombre' value='".$value['idReceta']."' >  <button  name='btn-enviar' id='btn-enviar' class='btn btn-danger btn-xs' type='submit'>  <span class='glyphicon glyphicon-eye-open'></span> </button> </form>  </td>";
+    $tabla .="<td> <form id='formulario' method='POST' action='RecetasIngredientesController.php'> 
+            <input type='hidden' name='nombre' value='".$value['idReceta']."' > 
+             <button  name='btn-enviar' class='btn btn-danger btn-xs'>
+              <span class='glyphicon glyphicon-eye-open'></span> </button> </form>  </td>";
     $tabla .="</tr>";
 }
 
