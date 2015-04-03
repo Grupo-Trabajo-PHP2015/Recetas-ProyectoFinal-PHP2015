@@ -2,18 +2,18 @@
 session_start();
 
 if (empty($_SESSION['Usuario'])) {
-        
-        session_start();
-        session_destroy();
-        header('location: loginController.php');
-    }
+    
+    session_start();
+    session_destroy();
+    header('location: loginController.php');
+}
 
-    if (isset($_POST['cerrar'])) {
-        
-        session_start();
-        session_destroy();
-        header('location: loginController.php');
-    }
+if (isset($_POST['cerrar'])) {
+    
+    session_start();
+    session_destroy();
+    header('location: loginController.php');
+}
 require_once '../Config/Config.php';
 require_once '../Library/DataBase.php';
 require_once '../Model/ModelRecetas.php';
@@ -116,8 +116,9 @@ foreach ($model->Mostrar()as $value) {
     $tabla .="<td> <a href='recetasController.php?id=" . $value['idReceta'] . "' class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
     $tabla .="<td> <form id='formulario' method='POST' action='RecetasIngredientesController.php'> 
             <input type='hidden' name='nombre' value='".$value['idReceta']."' > 
-             <button  name='btn-enviar' class='btn btn-danger btn-xs'>
+             <button  name='btn-enviar' class='btn btn-success btn-xs'>
               <span class='glyphicon glyphicon-eye-open'></span> </button> </form>  </td>";
+    $tabla .="<td> <a href='recetasController.php?delete=" . $value['idReceta'] . "' class='btn btn-danger btn-xs' role='button'>  <span class='glyphicon glyphicon-trash'></span> </a> </td>";
     $tabla .="</tr>";
 }
 

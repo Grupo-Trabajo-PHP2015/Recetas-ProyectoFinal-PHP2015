@@ -72,7 +72,7 @@ class Recetas {
     }
 
     public function MostrarIngrediente() {
-        $sql = "SELECT i.Nombre, x.Cantidad FROM recetas r join recetas_has_ingredientes x 
+        $sql = "SELECT i.Nombre, x.Cantidad , i.Url FROM recetas r join recetas_has_ingredientes x 
                 ON r.idReceta=x.recetas_idReceta join ingredientes i 
                 ON x.ingredientes_idIngrediente= i.idIngrediente WHERE idReceta= :idReceta";
         $sth = $this->db->prepare($sql);

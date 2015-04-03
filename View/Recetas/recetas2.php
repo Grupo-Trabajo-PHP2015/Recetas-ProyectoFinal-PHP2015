@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="es" >
     <head>
-        <meta charset="UTF-8" >
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Ingredientes</title>
+        <meta charset="UTF-8">
+
+        <title>Recetas</title>
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
@@ -50,78 +48,84 @@
         </nav>        
         <!-- Fin de menu horizontal -->
 
-      <div id="container4">
-      <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-      <!-- Overlay -->
-      <div class="overlay"></div>
 
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#bs-carousel" data-slide-to="1"></li>
-        <li data-target="#bs-carousel" data-slide-to="2"></li>
-      </ol>
-  
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item slides active">
-          <div class="slide-1"></div>
-          <div class="hero">
-            <hgroup>
-                <h1 id="titulo1">INGREDIENTES</h1>        
-                <h3>Observa ingredientes disponibles</h3>
-            </hgroup>
-          </div>
-        </div>
-        <div class="item slides">
-          <div class="slide-2"></div>
-          <div class="hero">        
-            <hgroup>
-                <h1 id="titulo1">REGISTRA</h1>        
-                <h3>Agrega el ingrediente a la receta que desees</h3>
-            </hgroup>       
-            <button class="btn btn-hero btn-lg" role="button" data-toggle="modal" data-target="#nuevo">Utiliza los ingredientes</button>
-          </div>
-        </div>
-        <div class="item slides">
-          <div class="slide-3"></div>
-          <div class="hero">        
-            <hgroup>
-                <h1 id="titulo1">ELIMINA</h1>        
-                <h3>Elimina los ingredientes que no desees en tu menú</h3>
-            </hgroup>
-            <button class="btn btn-hero btn-lg" role="button">Eliminar</button>
-          </div>
-        </div>
-      </div> 
+          <div id="container4">
+          <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+          <!-- Overlay -->
+          <div class="overlay"></div>
+
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#bs-carousel" data-slide-to="1"></li>
+            <li data-target="#bs-carousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item slides active">
+              <div class="slide-1"></div>
+              <div class="hero">
+                <hgroup>
+                    <h1 id="titulo1">RECETAS</h1>        
+                    <h3>Gestiona tus recetas</h3>
+                </hgroup>
+              </div>
             </div>
-        <div id="container" class="container">
-          
-            <div class="row">
+            <div class="item slides">
+              <div class="slide-2"></div>
+              <div class="hero">        
+                <hgroup>
+                    <h1 id="titulo1">REGISTRA</h1>        
+                    <h3>Agrega las recetas que desees</h3>
+                </hgroup>       
+                <button class="btn btn-hero btn-lg" role="button" data-toggle="modal" data-target="#nuevo">Agregar nuevas recetas</button>
+              </div>
+            </div>
+            <div class="item slides">
+              <div class="slide-3"></div>
+              <div class="hero">        
+                <hgroup>
+                    <h1 id="titulo1">ELIMINA</h1>        
+                    <h3>Elimina las que no desees en tu menú</h3>
+                </hgroup>
+                <button class="btn btn-hero btn-lg" role="button">Eliminar</button>
+              </div>
+            </div>
+          </div> 
+            </div>
+
+            <hr>
+            <div style="margin-left:70px; margin-righ:-10px;" class="row">
                 <div class="table-responsive">
-                    <div class="col-md-12">
-                        <table id="example" border="1" class="table table-bordred table-striped" style="text-align: center" >
+                    <div class="col-md-11">
+                        <table  id="example" border="1" class="table table-bordred table-striped" style="text-align: center" >
                             <thead>
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Imagen</th>
+                                    <th>Receta</th>
                                     <th>Descripción</th>
+                                    <th>Porciones</th>
+                                    <th>Fecha publicación</th>
+                                    <th>Clasificación de comida</th>
+                                    <th>Autor</th>
+                                    <th>Ver ingredientes</th>
                                 </tr>
                             </thead>
                             <tbody>
 
-                                <?php
-                                echo $tabla;
-                                ?>
+                                <?php echo $tabla; ?>
 
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            
-            
- <!-- Modal2 -->
+           
+
+
+        </div>
+
+        <!-- Modal2 -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -202,7 +206,6 @@
         </div>
     </div>
 </div>
-
 
     <!-- Pie de pagina -->
     <footer>
@@ -299,10 +302,9 @@
             </div>
         </footer>
                     <!-- Fin pie de pagina -->
-
-            <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
-            <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
-            <script src="../Assets/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
+        <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
+        <script src="../Assets/js/jquery.dataTables.js"></script>
     <script class="init">
 
 $(document).ready(function() {
@@ -310,5 +312,6 @@ $(document).ready(function() {
 
 } );
  </script>
+
     </body>
 </html>

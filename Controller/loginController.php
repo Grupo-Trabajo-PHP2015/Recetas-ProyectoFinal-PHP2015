@@ -45,7 +45,7 @@ if (isset($_POST["session"])) {
                 "Url"=>"<ul class='nav navbar-nav'>
                             <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
                             <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
-                            <li><a href='recetasController.php'>Ver todas las recetas</a></li>
+                            <li><a href='recetas2Controller.php'>Ver todas las recetas</a></li>
                             <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
                             <li><a href='ingredientes2Controller.php'>Ver ingredientes disponibles</a></li>
                             <li><a href='clasificacion2Controller.php'>Clasificaciones disponibles</a></li>
@@ -220,7 +220,8 @@ if (isset($_POST["action"])) {
     }
 }
 } catch(PDOException $e){
-    echo '<script>alert("error documento")</script>'; 
+
+    echo '<script>alert("Error documento ya existe en el sistema")</script>'; 
    //die("Error el documento ya existe en la base de datos (Verifique su conexion esta puede ser otra causa del error) <a href='loginController.php'>Volver</a>");
 }      
        include_once '../View/Login/login.php';

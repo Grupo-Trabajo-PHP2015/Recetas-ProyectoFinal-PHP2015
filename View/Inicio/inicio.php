@@ -12,16 +12,16 @@
     <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
     <meta name="author" content="Codrops" />
 
-        <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview" />
-        <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
-        <meta name="author" content="Codrops" />
-        <link rel="stylesheet" type="text/css" href="../Assets/css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="../Assets/css/style2.css" />
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
-        <noscript>
-            <link rel="stylesheet" type="text/css" href="../Assets/css/noscript.css" />
-        </noscript>
-        <link rel="shortcut icon" href="../Assets/img/restaurant.png">
+    <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview" />
+    <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic" />
+    <meta name="author" content="Codrops" />
+    <link rel="stylesheet" type="text/css" href="../Assets/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../Assets/css/style2.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="../Assets/css/noscript.css" />
+    </noscript>
+    <link rel="shortcut icon" href="../Assets/img/restaurant.png">
 
     <title>Inicio</title>
     <link rel="shortcut icon" href="../Assets/img/restaurant.png"> 
@@ -76,13 +76,19 @@
         </nav>        
         <!-- Fin de menu horizontal -->
 
+        <div style="margin-top:70px; margin-bottom:-50px;" class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>Excelente!</strong> Has ingresado a Restaurant Software.
+          <br> Eres <?php echo $_SESSION['Rol']; ?> en el sistema. 
+        </div>
+
         <!-- Inicio de cuerpo -->
-    	<div id="encabezado">
-    	  <h1>Bienvenido Querido <?php echo $_SESSION['Rol']; ?></h1>
+    	<div id="encabezado2">
+    	  <h1>Bienvenid@ <?php echo $_SESSION['Nombre']; ?></h1>
     	</div>
         
         <div class="container">
-            <div class="header">
+            <div id="rayita" class="header">
                 <span class="right">
                     <a href="recetasController.php">
                         <strong>Encuentra aqui las mejores recetas</strong>
@@ -327,7 +333,8 @@
                 </div>
             </div>
         </footer>
-                    <!-- Fin pie de pagina -->
+        <!-- Fin pie de pagina -->
+        
         <script type="text/javascript" src="../Assets/js/jquery-1.11.2.js" ></script>
         <script type="text/javascript" src="../Assets/bootstrap-3.3.4-dist/js/bootstrap.js" ></script>
         <script type="text/javascript" src="../Assets/js/jquery.eislideshow.js"></script>

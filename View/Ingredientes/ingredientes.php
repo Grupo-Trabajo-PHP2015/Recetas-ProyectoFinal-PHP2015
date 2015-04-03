@@ -68,7 +68,7 @@
           <div class="slide-1"></div>
           <div class="hero">
             <hgroup>
-                <h1>INGREDIENTES</h1>        
+                <h1 id="titulo1">INGREDIENTES</h1>        
                 <h3>Gestiona tus ingredientes</h3>
             </hgroup>
           </div>
@@ -77,7 +77,7 @@
           <div class="slide-2"></div>
           <div class="hero">        
             <hgroup>
-                <h1>REGISTRA</h1>        
+                <h1 id="titulo1">REGISTRA</h1>        
                 <h3>Agrega el ingrediente que desees</h3>
             </hgroup>       
             <button class="btn btn-hero btn-lg" role="button" data-toggle="modal" data-target="#nuevo">Agregar nuevos ingredientes</button>
@@ -87,8 +87,8 @@
           <div class="slide-3"></div>
           <div class="hero">        
             <hgroup>
-                <h1>ELIMINA</h1>        
-                <h3>Elimina los ingredientes que no desees en tu menú</h3>
+                <h1 id="titulo1">ELIMINA</h1>        
+                <h4>Elimina los ingredientes que no desees en tu menú</h4>
             </hgroup>
             <button class="btn btn-hero btn-lg" role="button">Eliminar</button>
           </div>
