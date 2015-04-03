@@ -109,7 +109,7 @@
                             <div class="form-group">
                                 <label class="col-md-1 control-label" for="titulo">ID:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="titulo" type="text" placeholder="" class="form-control input-md"  value="  <?php echo $id_n; ?>" <?php echo $bloqueo; ?> >
+                                    <input id="textinput1" required name="titulo" type="text" placeholder="" class="form-control input-md"  value="  <?php echo $id_n; ?>" <?php echo $bloqueo; ?> >
 
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                             <div class="form-group">
                                 <label class="col-md-1 control-label" for="porciones">Titulo:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="titulo" type="text" placeholder="" class="form-control input-md" value="  <?php echo $TituloEdi; ?>" >
+                                    <input id="textinput1" required name="titulo" type="text" placeholder="" class="form-control input-md" value="  <?php echo $TituloEdi; ?>" >
 
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                             <div class="form-group">
                                 <label class="col-md-1 control-label" for="editar_descripcion">Descripción:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="descripcion" type="text" placeholder="" class="form-control input-md" value="  <?php echo $DescripcionEdi; ?>" >
+                                    <input id="textinput1" required name="descripcion" type="text" placeholder="" class="form-control input-md" value="  <?php echo $DescripcionEdi; ?>" >
 
                                 </div>
                             </div>
@@ -136,7 +136,7 @@
                             <div class="form-group">
                                 <label class="col-md-1 control-label" for="clasificacion">Porciones:</label>  
                                 <div class="col-md-6">
-                                    <input id="textinput1" name="porciones" type="text" placeholder="" class="form-control input-md" value="  <?php echo $PorcionesEdi; ?>" >
+                                    <input id="textinput1" required name="porciones" type="text" placeholder="" class="form-control input-md" value="  <?php echo $PorcionesEdi; ?>" >
 
                                 </div>
                             </div>
