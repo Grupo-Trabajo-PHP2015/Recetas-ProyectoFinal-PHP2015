@@ -73,6 +73,11 @@
                         <div class="col-md-12">
                             <h3> Paso 1</h3>
                             <br>
+                               <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-danger alert-dismissible" role="alert">
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <strong>Importante!</strong> Para agregar una receta es necesario que llene 
+                              <br> todos los campos de lo contrario no se hara efectivo el registro'. 
+                            </div>
                             <table  cellspacing="20" >
                                 <tr>
                                     <td>  <label class="col-md-4 control-label" >Titulo:</label> </td>
@@ -125,7 +130,7 @@
                                 </tr>
                             </table>  
 
-                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit" >Siguiente</button>
 
                         </div>
                     </div>
@@ -140,6 +145,11 @@
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <strong>Instruccion!</strong> Para agregar un ingrediente a la receta
                               <br>  arrastre la imagen hasta 'ingredientes necesarios'. 
+                            </div>
+                            <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-danger alert-dismissible" role="alert">
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <strong>Importante!</strong> Para agregar una receta es necesario que llene 
+                              <br> todos los campos de lo contrario no se hara efectivo el registro'. 
                             </div>
                                 <div class="table-responsive">
                                     <div class="col-md-6">
@@ -184,6 +194,11 @@
                             <h3>Paso 3</h3>
                             <diV class="row">
                                 <div class="col-md-6">
+                                       <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-danger alert-dismissible" role="alert">
+                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <strong>Importante!</strong> Para agregar una receta es necesario que llene 
+                                          <br> todos los campos de lo contrario no se hara efectivo el registro'. 
+                                        </div>
                                     <h1>Cantidad</h1>
                                     <ul id="imprimir" class='list-group'>
 
@@ -196,7 +211,8 @@
                 </div>
             </form>
         </div>
-        
+        </diV>
+
     <!-- Pie de pagina -->
     <footer>
         <div class="row1">
