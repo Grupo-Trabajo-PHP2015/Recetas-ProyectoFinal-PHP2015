@@ -132,6 +132,7 @@
                             </table>  
 
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit" >Siguiente</button>
+<<<<<<< HEAD
 
                             <hr>
                             <div class="col-md-9">
@@ -170,6 +171,8 @@
 
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+=======
+>>>>>>> origin/master
 
                         </div>
                     </div>
@@ -191,9 +194,12 @@
                               <strong>Importante!</strong> Para agregar una receta es necesario que llene 
                               <br> todos los campos de lo contrario no se hara efectivo el registro'. 
                             </div>
+<<<<<<< HEAD
 
                                 <div class="col-md-9" >
 
+=======
+>>>>>>> origin/master
                                 <div class="table-responsive">
                                     <div class="col-md-6">
                                         <h4  style="text-align: center; margin-top:20px;" >Ingredientes</h4>

@@ -90,8 +90,8 @@
         <div class="container">
             <div id="rayita" class="header">
                 <span class="right">
-                    <a href="recetasController.php">
-                        <strong>Encuentra aqui las mejores recetas</strong>
+                    <a href="recetas3Controller.php">
+                        <strong>Encuentra aqui tus recetas</strong>
                     </a>
                 </span>
                 <div class="clr"></div>
