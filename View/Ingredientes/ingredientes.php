@@ -117,6 +117,15 @@
 
                             <!-- Text input-->
                             <div class="form-group">
+                                <label text-aling=left class="col-md-1 control-label" for="textinput">Nombre:</label>  
+                                <div class="col-md-6">
+                                    <input id="textinput1" required name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
+
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
                                 <label text-aling=left class="col-md-1 control-label " for="textinput">Descripción:</label>  
                                 <div class="col-md-6">
                                     <input id="textinput1"required  name="descripcion2" type="text" placeholder="Caracteristicas del producto" class="form-control input-md"  value=" <?php echo $descripcion2; ?> " >
@@ -124,14 +133,7 @@
                                 </div>
                             </div>
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label text-aling=left class="col-md-1 control-label" for="textinput">Nombre:</label>  
-                                <div class="col-md-6">
-                                    <input id="textinput1" required name="nombre" type="text" placeholder="Nombre ingrediente" class="form-control input-md" value=" <?php echo $nombre; ?> " >
-
-                                </div>
-                            </div>
+                            
 
                             <div class="form-group">
                                 <label text-aling=left class="col-md-1 control-label" for="textinput">URL:</label>  
