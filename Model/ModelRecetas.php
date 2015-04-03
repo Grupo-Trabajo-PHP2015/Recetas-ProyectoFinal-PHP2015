@@ -71,6 +71,16 @@ class Recetas {
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
+        public function Mostrar2() {
+
+        $sql = " SELECT u.Nombre, r.idReceta ,r.Titulo, r.Porciones, r.Descripcion, r.Fecha_publicacion, c.Clasificacion FROM recetas r join usuarios u 
+        on r.Usuarios_Cedula=u.Cedula join clasificaciones c 
+        on r.Clasificaciones_idClasificacion=c.idClasificacion WHERE Cedula= :Cedula";
+        $sth = $this->db->prepare($sql);
+        $sth->execute(array(':Cedula' => $this->__GET("Cedula")));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function MostrarIngrediente() {
         $sql = "SELECT i.Nombre, x.Cantidad , i.Url FROM recetas r join recetas_has_ingredientes x 
                 ON r.idReceta=x.recetas_idReceta join ingredientes i 

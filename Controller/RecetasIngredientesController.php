@@ -37,7 +37,7 @@ $resultado="";
         $resultado .= '<div class="row">';
         $resultado .= '<div class="table-responsive">';
         $resultado .= '<div class="col-md-6">';
-        $resultado .= '<table id="example" border="1" class="table table-bordred table-striped" style="text-align: center; margin-left:300px;" >';
+        $resultado .= '<table  border="1" class="table table-bordred table-striped" style="text-align: center; margin-left:300px;" >';
         
         $resultado .= '<thead>';
             $resultado .= '<tr>';

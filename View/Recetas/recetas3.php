@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/style4.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
     </head>
     <body>
@@ -49,51 +50,71 @@
         <!-- Fin de menu horizontal -->
 
 
-          <div id="container4">
-          <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-          <!-- Overlay -->
-          <div class="overlay"></div>
-
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#bs-carousel" data-slide-to="1"></li>
-            <li data-target="#bs-carousel" data-slide-to="2"></li>
-          </ol>
-      
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item slides active">
-              <div class="slide-1"></div>
-              <div class="hero">
-                <hgroup>
-                    <h1 id="titulo1">RECETAS</h1>        
-                    <h3>Gestiona tus recetas</h3>
-                </hgroup>
-              </div>
+          <div class="container5">
+    <div class="row">
+        <!-- Carousel -->
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="../Assets/img/1.jpg" alt="First slide">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            
+                            <br>
+                            <h3>
+                                <span>Gestiona aqui tus recetas.</span>
+                            </h3>
+                            <br>
+                            <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="#">Crealas</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Compartelas</a></div>
+                        </div>
+                    </div><!-- /header-text -->
+                </div>
+                <div class="item">
+                    <img src="../Assets/img/2.jpg" alt="Second slide">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            
+                            <br>
+                            <h3>
+                                <span>Gestiona aqui tus recetas.</span>
+                            </h3>
+                            <br>
+                            <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="#">Crealas</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Compartelas</a></div>
+                        </div>
+                    </div><!-- /header-text -->
+                </div>
+                <div class="item">
+                    <img src="../Assets/img/3.jpg" alt="Third slide">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            
+                            <br>
+                            <h3>
+                                <span>Gestiona aqui tus recetas.</span>
+                            </h3>
+                            <br>
+                            <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="#">Crealas</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Compartelas</a></div>
+                        </div>
+                    </div><!-- /header-text -->
+                </div>
             </div>
-            <div class="item slides">
-              <div class="slide-2"></div>
-              <div class="hero">        
-                <hgroup>
-                    <h1 id="titulo1">REGISTRA</h1>        
-                    <h3>Agrega las recetas que desees</h3>
-                </hgroup>       
-                <button class="btn btn-hero btn-lg" role="button" data-toggle="modal" data-target="#nuevo">Agregar nuevas recetas</button>
-              </div>
-            </div>
-            <div class="item slides">
-              <div class="slide-3"></div>
-              <div class="hero">        
-                <hgroup>
-                    <h1 id="titulo1">ELIMINA</h1>        
-                    <h3>Elimina las que no desees en tu menú</h3>
-                </hgroup>
-                <button class="btn btn-hero btn-lg" role="button">Eliminar</button>
-              </div>
-            </div>
-          </div> 
-            </div>
+         
+        </div><!-- /carousel -->
+    </div>
+</div>
 
         <div id="container" class="container">
             

@@ -23,6 +23,7 @@ $TituloEdi = "";
 $DescripcionEdi = "";
 $PorcionesEdi = "";
 $bloqueo = "";
+$Cedula = "";
 
 if (isset($_GET["id"])) {
 
@@ -104,7 +105,11 @@ if (isset($_POST['editar'])) {
 
 $model = new Recetas();
 $tabla = "";
-foreach ($model->Mostrar()as $value) {
+$Cedula=$_SESSION['Cedula'];
+$model->__SET("Cedula", $Cedula);
+foreach ($model->Mostrar2()as $value) {
+
+
 
     $tabla .="<tr>";
     $tabla .="<td>" . $value['Titulo'] . "</td>";
@@ -113,7 +118,7 @@ foreach ($model->Mostrar()as $value) {
     $tabla .="<td>" . $value['Fecha_publicacion'] . "</td>";
     $tabla .="<td>" . $value['Clasificacion'] . "</td>";
     $tabla .="<td>" . $value['Nombre'] . "</td>";
-    $tabla .="<td> <a href='recetasController.php?id=" . $value['idReceta'] . "' class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
+    $tabla .="<td> <a href='recetas3Controller.php?id=" . $value['idReceta'] . "' class='btn btn-primary btn-xs' role='button'> <span class='glyphicon glyphicon-pencil'></span> </a> </td>";
     $tabla .="<td> <form id='formulario' method='POST' action='RecetasIngredientesController.php'> 
             <input type='hidden' name='nombre' value='".$value['idReceta']."' > 
              <button  name='btn-enviar' class='btn btn-danger btn-xs'>
@@ -122,5 +127,5 @@ foreach ($model->Mostrar()as $value) {
 }
 
 
-include_once '../View/Recetas/recetas.php';
+include_once '../View/Recetas/recetas3.php';
 ?>

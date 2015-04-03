@@ -31,7 +31,7 @@ if (isset($_POST["session"])) {
                             <li class='dropdown'>
                             <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Recetas <span class='caret'></span></a>
                                 <ul class='dropdown-menu' role='menu'>
-                                    <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
+                                    <li><a href='recetas3Controller.php'>Gestionar mis recetas</a></li>
                                     <li><a href='recetasController.php'>Ver todas las recetas</a></li>
                                     <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
                                     <li class='divider'></li>
@@ -44,7 +44,7 @@ if (isset($_POST["session"])) {
             array(
                 "Url"=>"<ul class='nav navbar-nav'>
                             <li><a href='inicioController.php'><img id='img1' class='img-responsive' src='../Assets/img/logo.png'></a></li>
-                            <li><a href='recetasController.php'>Gestionar mis recetas</a></li>
+                            <li><a href='recetas3Controller.php'>Gestionar mis recetas</a></li>
                             <li><a href='recetas2Controller.php'>Ver todas las recetas</a></li>
                             <li><a href='nuevasRecetaController.php'>Agregar recetas</a></li>
                             <li><a href='ingredientes2Controller.php'>Ver ingredientes disponibles</a></li>
