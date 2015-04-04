@@ -116,7 +116,7 @@
                                 </tr>
                                 <tr>
                                     <td>  <label class="col-md-3 control-label" >Porciones:</label> </td>
-                                    <td>  <input name="porciones" type="number" min="2" max="20" value="2" class="form-control input-md" required="required" > </td>
+                                    <td>  <input name="porciones" type="number" min="2" max="20"  class="form-control input-md" required="required" > </td>
                                 </tr>
                                 <tr>
                                     <td> <hr> </td>
