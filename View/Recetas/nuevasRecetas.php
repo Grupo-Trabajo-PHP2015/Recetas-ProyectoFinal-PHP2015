@@ -7,12 +7,13 @@
         <link rel="shortcut icon" href="../Assets/img/restaurant.png">
         <link rel="stylesheet" type="text/css" href="../Assets/bootstrap-3.3.4-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../Assets/fonts/style.css">
-        <link rel="stylesheet" type="text/css" href="../Assets/css/style3.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/modal.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/style3.css">
         <link rel="stylesheet" type="text/css" href="../Assets/css/jquery.dataTables.css">
-        
+             
     </head>
     <body>
+
         <!-- Menu de navegacion horizontal -->
         <nav id="menu_navegar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
@@ -72,17 +73,17 @@
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <h3> Paso 1</h3>
-
-                            <br>
-                               <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-danger alert-dismissible" role="alert">
+                             <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-danger alert-dismissible" role="alert">
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <strong>Importante!</strong> Para agregar una receta es necesario que llene 
                               <br> todos los campos de lo contrario no se hara efectivo el registro'. 
                             </div>
+                            <br>
+                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
                             <table  cellspacing="20" >
                                 <tr>
                                     <td>  <label class="col-md-4 control-label" >Titulo:</label> </td>
-                                    <td>  <input name="titulo" type="text" placeholder="Nombre de su receta" class="form-control input-md" required > </td>
+                                    <td>  <input name="titulo" type="text" placeholder="Nombre de su receta" class="form-control input-md" required="required" > </td>
                                 </tr>
                                 <tr>
                                     <td> <hr> </td>
@@ -90,7 +91,7 @@
                                 </tr>
                                 <tr>
                                     <td>  <label  class="col-md-4 control-label" >Descripción:</label> </td>
-                                    <td>  <textarea name="descripcion" placeholder="Paso a paso receta" required class="form-control input-md" rows="4" cols="50" ></textarea> </td>
+                                    <td>  <textarea name="descripcion" placeholder="Paso a paso receta" required="required" class="form-control input-md" rows="4" cols="50" ></textarea> </td>
                                 </tr>
                                 <tr>
                                     <td> <hr> </td>
@@ -101,7 +102,7 @@
                                     <td> <label class="col-md-4 control-label" for="selectbasic">Clasificación</label> </td>
                                     <td>   
                                         <div class="col-md-6">
-                                            <select id="selectbasic" name="clasificacion" class="form-control"  required>
+                                            <select id="selectbasic" name="clasificacion" class="form-control"  required="required">
 
                                                 <?php echo $select; ?>
 
@@ -115,7 +116,7 @@
                                 </tr>
                                 <tr>
                                     <td>  <label class="col-md-3 control-label" >Porciones:</label> </td>
-                                    <td>  <input name="porciones" type="number" min="2" max="20"  class="form-control input-md" required > </td>
+                                    <td>  <input name="porciones" type="number" min="2" max="20" value="2" class="form-control input-md" required="required" > </td>
                                 </tr>
                                 <tr>
                                     <td> <hr> </td>
@@ -131,48 +132,7 @@
                                 </tr>
                             </table>  
 
-                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit" >Siguiente</button>
-<<<<<<< HEAD
-
-                            <hr>
-                            <div class="col-md-9">
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" >Titulo:</label>
-                                <input name="titulo" type="text" placeholder="Nombre de su receta" class="form-control input-md" required="required" >
-                            </div>
-                             <div class="form-group">
-                                <label class="col-md-3 control-label" >Porciones:</label>
-                                <input name="porciones" type="number" min="2" max="20" value="" class="form-control input-md" required="required" > 
-
-                            </div>
                             
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="selectbasic">Clasificación</label>
-                                <select id="selectbasic" name="clasificacion" class="form-control"  required="required">
-                                    <option></option>
-                                    <?php echo $select; ?>
-
-                                </select>
-
-                            </div>
-                            
-                            <div class="form-group">
-                                <label  class="col-md-4 control-label" >Descripción:</label>
-                                <textarea name="descripcion" placeholder="Paso a paso receta" required="required" class="form-control input-md" rows="4" cols="50" ></textarea> 
-                            </div>
-                           
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" >Autor:</label>
-                                <input name="autor" id="autor" style="text-align: center" type="text" placeholder="Nombre usuario" class="form-control input-md" value=" <?php echo $_SESSION['Nombre'] ?>  " > 
-
-                                <input name="idUsuario" id="idUsuario" style="text-align: center" type="hidden" class="form-control input-md" value=" <?php echo $_SESSION['Cedula']; ?> " > 
-
-                            </div>
-
-                            </div>
-                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
-=======
->>>>>>> origin/master
 
                         </div>
                     </div>
@@ -182,8 +142,7 @@
                         <div class="col-md-12">
                             <h3>Paso 2</h3>
                             <br>
-
-                            <div class="row">
+                            
                             <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-success alert-dismissible" role="alert">
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <strong>Instruccion!</strong> Para agregar un ingrediente a la receta
@@ -194,17 +153,13 @@
                               <strong>Importante!</strong> Para agregar una receta es necesario que llene 
                               <br> todos los campos de lo contrario no se hara efectivo el registro'. 
                             </div>
-<<<<<<< HEAD
-
-                                <div class="col-md-9" >
-
-=======
->>>>>>> origin/master
+                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+                            <div class="row">
                                 <div class="table-responsive">
                                     <div class="col-md-6">
-                                        <h4  style="text-align: center; margin-top:20px;" >Ingredientes</h4>
+                                        <h4  style="text-align: center" >Ingredientes</h4>
                                         <hr>
-                                        <table id="example" border="1" class="table table-bordred table-striped" style="text-align: center" >
+                                        <table  id="example" border="1" class="table table-bordred table-striped" style="text-align: center" >
                                             <thead>
                                                 <tr>
                                                     <th>Nombre</th>
@@ -231,8 +186,9 @@
                                         </div>
                                     </div>  
                                 </div>
-                                </div>
-                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -240,13 +196,13 @@
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <h3>Paso 3</h3>
+                            <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-danger alert-dismissible" role="alert">
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <strong>Importante!</strong> Para agregar una receta es necesario que llene 
+                              <br> todos los campos de lo contrario no se hara efectivo el registro'. 
+                            </div>
                             <diV class="row">
                                 <div class="col-md-6">
-                                       <div style="margin-top:10px; margin-bottom:20px;" class="alert alert-danger alert-dismissible" role="alert">
-                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                          <strong>Importante!</strong> Para agregar una receta es necesario que llene 
-                                          <br> todos los campos de lo contrario no se hara efectivo el registro'. 
-                                        </div>
                                     <h1>Cantidad</h1>
                                     <ul id="imprimir" class='list-group'>
 
@@ -259,9 +215,8 @@
                 </div>
             </form>
         </div>
-        </diV>
 
-    <!-- Pie de pagina -->
+         <!-- Pie de pagina -->
     <footer>
         <div class="row1">
             <div class="row">
@@ -389,13 +344,13 @@
                     var draggable = ui.draggable;
 
                     $("#autor").removeAttr("disabled");
-                var sabor = $('#ListaIngrediente').val();
+                    var sabor = $('#ListaIngrediente').val();
                     var total = $('#total').text();
-                total = total.concat(draggable.data('ingrediente'));
-                sabor = sabor.concat(draggable.data('ingrediente'));
+                    total = total.concat(draggable.data('ingrediente'));
+                    sabor = sabor.concat(draggable.data('ingrediente'));
 
-                $('#ListaIngrediente').val(sabor);
-                $('#total').text(total);
+                    $('#ListaIngrediente').val(sabor);
+                    $('#total').text(total);
 
                     var arreglo = [];
                     arreglo[arreglo.length] = draggable.data('ingrediente');
@@ -404,13 +359,13 @@
                     lista += "<li class='list-group-item' >" + arreglo[0] + "<div class='col-md-4'> <input type='number' style='text-align:center' id='cantidad' class='cantidad' name=" + draggable.data('id') + " min='2' max='20' value='2' class='form-control input-md' > </div>  </li>";
                     $('#imprimir').append(lista);
                     ;
-                    }
+                }
             });
 
         </script>
 
         <script type="text/javascript">
-                    $(document).ready(function () {
+            $(document).ready(function () {
 
                 var navListItems = $('div.setup-panel div a'),
                         allWells = $('.setup-content'),
@@ -420,37 +375,39 @@
 
                 navListItems.click(function (e) {
                     e.preventDefault();
-                var $target = $($(this).attr('href')),
-    $item = $(this);
+                    var $target = $($(this).attr('href')),
+                            $item = $(this);
 
-            if (!$item.hasClass('disabled')) {
+                    if (!$item.hasClass('disabled')) {
                         navListItems.removeClass('btn-primary').addClass('btn-default');
                         $item.addClass('btn-primary');
                         allWells.hide();
-                $target.show();
-                    $target.find('input:eq(0)').focus();
+                        $target.show();
+                        $target.find('input:eq(0)').focus();
                     }
-                    });
+                });
 
                 allNextBtn.click(function () {
                     var curStep = $(this).closest(".setup-content"),
-                        curStepBtn = curStep.attr("id"),
-                        nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                        curInputs = curStep.find("input[type='text'],input[type='url']"),
-                    isValid = true;
+                            curStepBtn = curStep.attr("id"),
+                            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                            curInputs = curStep.find("input[type='text'],input[type='url']"),
+                            isValid = true;
 
-                $(".form-group").removeClass("has-error");
+                    $(".form-group").removeClass("has-error");
                     for (var i = 0; i < curInputs.length; i++) {
-                            if (!curInputs[i].validity.valid) {                             isValid = false;
+                        if (!curInputs[i].validity.valid) {
+                            isValid = false;
                             $(curInputs[i]).closest(".form-group").addClass("has-error");
-                            }
+                        }
                     }
 
                     if (isValid)
-                    nextStepWizard.removeAttr('disabled').trigger('click');
+                        nextStepWizard.removeAttr('disabled').trigger('click');
                 });
 
-                    $('div.setup-panel div a.btn-primary').trigger('click');             });
+                $('div.setup-panel div a.btn-primary').trigger('click');
+            });
         </script>
     </body>
 </html>
